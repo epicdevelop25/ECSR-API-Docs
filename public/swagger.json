@@ -1,11 +1,19 @@
 {
     "swagger": "2.0",
+    "host": "ecsr.io",
+    "basePath": "/apisite",
+    "schemes": [
+        "https"
+    ],
+    "x-swagger-ui-config": {
+    "filter": true,
+    "filterPlaceholder": "Search APIs…"
+    },
     "info": {
       "title": "ECS:R API DOCS",
       "version": "1.0.0",
       "description": "The below APIs may be outdated and some APIs may be missing. We will be working on adding any missing APIs and fixing outdated ones."
     },
-    "basePath": "/apisite",
     "paths": {
       "/accountinformation/v1/users/{userId}/roblox-badges": {
         "get": {
