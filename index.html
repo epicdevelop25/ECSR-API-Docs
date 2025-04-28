@@ -16,10 +16,7 @@
             align-items: center;
             gap: 10px;
         }
-        .custom-header label {
-            font-weight: 600;
-            font-size: 14px;
-        }
+        .custom-header label { font-weight: 600; font-size: 14px; }
         .custom-header input {
             font-family: inherit;
             font-size: 14px;
@@ -53,13 +50,11 @@
     </div>
 
     <div id="swagger-ui"></div>
-    
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
         function replaceDomain(text) {
             return text.replace(/https:\/\/ecsr-api-docs\.vercel\.app/g, 'https://ecsr.io');
         }
-
         function applyTextReplacements(root) {
             root.querySelectorAll('*').forEach(el => {
                 el.childNodes.forEach(child => {
@@ -69,7 +64,6 @@
                 });
             });
         }
-
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('cookie-input');
             const saved = localStorage.getItem('roblosecurity');
@@ -82,21 +76,14 @@
                 if (val) {
                     localStorage.setItem('roblosecurity', val);
                     document.cookie = `.ROBLOSECURITY=${val}; path=/`;
-                    alert('Cookie set for Swagger UI requests');
                 } else {
                     localStorage.removeItem('roblosecurity');
                     document.cookie = `.ROBLOSECURITY=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-                    alert('Cookie cleared');
                 }
             });
-
             fetch('/public/swagger.json')
                 .then(res => res.json())
                 .then(spec => {
-                    spec.host = 'ecsr.io';
-                    spec.schemes = ['https'];
-                    spec.basePath = '/apisite';
-
                     const ui = SwaggerUIBundle({
                         spec: spec,
                         dom_id: '#swagger-ui',
@@ -105,32 +92,20 @@
                             SwaggerUIBundle.presets.apis,
                             SwaggerUIBundle.SwaggerUIStandalonePreset
                         ],
-                        layout: "BaseLayout",
-                        docExpansion: "list",
-                        defaultModelsExpandDepth: 1,
-                        defaultModelExpandDepth: 1,
-                        displayRequestDuration: true,
                         requestCredentials: 'include',
-                        requestInterceptor: (req) => {
-                            const originalUrl = new URL(req.url);
-                            req.url = `https://ecsr-api-docs.vercel.app${originalUrl.pathname}${originalUrl.search}`;
+                        requestInterceptor: req => {
+                            const url = new URL(req.url);
+                            req.url = `https://ecsr-api-docs.vercel.app${url.pathname}${url.search}`;
                             return req;
                         }
                     });
                     window.ui = ui;
-
                     setTimeout(() => applyTextReplacements(document.body), 500);
-
-                    const observer = new MutationObserver(mutations => {
-                        mutations.forEach(m => {
-                            m.addedNodes.forEach(node => {
-                                if (node.nodeType === Node.ELEMENT_NODE) {
-                                    applyTextReplacements(node);
-                                }
-                            });
-                        });
-                    });
-                    observer.observe(document.body, { childList: true, subtree: true });
+                    new MutationObserver(mutations => {
+                        mutations.forEach(m => m.addedNodes.forEach(node => {
+                            if (node.nodeType === Node.ELEMENT_NODE) applyTextReplacements(node);
+                        }));
+                    }).observe(document.body, { childList: true, subtree: true });
                 });
         });
     </script>
