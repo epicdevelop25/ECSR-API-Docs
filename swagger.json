@@ -1,0 +1,3753 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "ECS:R API DOCS",
+      "version": "1.0.0",
+      "description": "The below APIs are documented from over 2 years ago. They may be outdated and some APIs may be missing. We will be working on adding any missing APIs and fixing outdated ones."
+    },
+    "host": "ecsr.io",
+    "basePath": "/apisite",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/accountinformation/v1/users/{userId}/roblox-badges": {
+        "get": {
+          "tags": ["Account Information"],
+          "summary": "getUserRobloxBadges",
+          "operationId": "getUserRobloxBadges",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/accountinformation/v1/description": {
+        "post": {
+          "tags": ["Account Information"],
+          "summary": "setUserDescription",
+          "operationId": "setUserDescription",
+          "parameters": [
+            {
+              "name": "description",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/accountsettings/v1/email": {
+        "get": {
+          "tags": ["Account Settings"],
+          "summary": "getMyEmail",
+          "operationId": "getMyEmail",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/accountsettings/v1/inventory-privacy": {
+        "get": {
+          "tags": ["Account Settings"],
+          "summary": "getInventoryPrivacy",
+          "operationId": "getInventoryPrivacy",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        },
+        "post": {
+          "tags": ["Account Settings"],
+          "summary": "setInventoryPrivacy",
+          "operationId": "setInventoryPrivacy",
+          "parameters": [
+            {
+              "name": "inventoryPrivacy",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "inventoryPrivacy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/accountsettings/v1/trade-privacy": {
+        "get": {
+          "tags": ["Account Settings"],
+          "summary": "getTradePrivacy",
+          "operationId": "getTradePrivacy",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        },
+        "post": {
+          "tags": ["Account Settings"],
+          "summary": "setTradePrivacy",
+          "operationId": "setTradePrivacy",
+          "parameters": [
+            {
+              "name": "tradePrivacy",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tradePrivacy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/accountsettings/v1/trade-value": {
+        "get": {
+          "tags": ["Account Settings"],
+          "summary": "getTradeValue",
+          "operationId": "getTradeValue",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        },
+        "post": {
+          "tags": ["Account Settings"],
+          "summary": "setTradeValue",
+          "operationId": "setTradeValue",
+          "parameters": [
+            {
+              "name": "tradeValue",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tradeValue": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/ads/v1/user-ads/{Type}/create": {
+        "post": {
+          "tags": ["Ads"],
+          "summary": "uploadAdvertisement",
+          "operationId": "uploadAdvertisement",
+          "parameters": [
+            {
+              "name": "Type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "assetId",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "formData",
+              "in": "formData",
+              "required": true,
+              "type": "file",
+              "description": "formData: {\"name\": name, \"files\": file}"
+            }
+          ],
+          "consumes": ["multipart/form-data"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/ads/v1/user-ads/{creatorType}/{creatorId}": {
+        "get": {
+          "tags": ["Ads"],
+          "summary": "getAds",
+          "operationId": "getAds",
+          "parameters": [
+            {
+              "name": "creatorType",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "enum": ["User", "Group"]
+            },
+            {
+              "name": "creatorId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/ads/v1/user-ads/{adId}/run": {
+        "post": {
+          "tags": ["Ads"],
+          "summary": "bidOnAd",
+          "operationId": "bidOnAd",
+          "parameters": [
+            {
+              "name": "adId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "robux",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "robux": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/api/alerts/alert-info": {
+        "get": {
+          "tags": ["API"],
+          "summary": "getAlert",
+          "operationId": "getAlert",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v2/login": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "login",
+          "operationId": "login",
+          "parameters": [
+            {
+              "name": "ctype",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "enum": ["username"]
+            },
+            {
+              "name": "cvalue",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "description": "username"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": ["application/x-www-form-urlencoded"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v2/logout": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "logout",
+          "operationId": "logout",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v2/user/passwords/change": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "changePassword",
+          "operationId": "changePassword",
+          "parameters": [
+            {
+              "name": "currentPassword",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "newPassword",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": ["application/x-www-form-urlencoded"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v1/usernames/validate": {
+        "get": {
+          "tags": ["Auth"],
+          "summary": "validateUsername",
+          "operationId": "validateUsername",
+          "parameters": [
+            {
+              "name": "username",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v1/username": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "changeUsername",
+          "operationId": "changeUsername",
+          "parameters": [
+            {
+              "name": "username",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": ["application/x-www-form-urlencoded"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/auth/v2/logoutfromallsessionsandreauthenticate": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "logoutFromAllOtherSessions",
+          "operationId": "logoutFromAllOtherSessions",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/avatar-rules": {
+        "get": {
+          "tags": ["Avatar"],
+          "summary": "getRules",
+          "operationId": "getRules",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/users/{userId}/avatar": {
+        "get": {
+          "tags": ["Avatar"],
+          "summary": "getAvatar",
+          "operationId": "getAvatar",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/avatar": {
+        "get": {
+          "tags": ["Avatar"],
+          "summary": "getMyAvatar",
+          "operationId": "getMyAvatar",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/avatar/redraw-thumbnail": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "redrawMyAvatar",
+          "operationId": "redrawMyAvatar",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/avatar/v1/avatar/set-wearing-assets": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "setWearingAssets",
+          "operationId": "setWearingAssets",
+          "parameters": [
+            {
+              "name": "assetIds",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetIds": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/avatar/v1/avatar/set-body-colors": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "setColors",
+          "operationId": "setColors",
+          "parameters": [
+            {
+              "name": "bodyColors",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "bodyColors": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/users/{userId}/outfits": {
+        "get": {
+          "tags": ["Avatar"],
+          "summary": "getOutfits",
+          "operationId": "getOutfits",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "default": 50
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "default": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/outfits/create": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "createOutfit",
+          "operationId": "createOutfit",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": ["application/x-www-form-urlencoded"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/outfits/{outfitId}/wear": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "wearOutfit",
+          "operationId": "wearOutfit",
+          "parameters": [
+            {
+              "name": "outfitId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/outfits/{outfitId}/delete": {
+        "post": {
+          "tags": ["Avatar"],
+          "summary": "deleteOutfit",
+          "operationId": "deleteOutfit",
+          "parameters": [
+            {
+              "name": "outfitId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/avatar/v1/outfits/{outfitId}": {
+        "patch": {
+          "tags": ["Avatar"],
+          "summary": "renameOutfit",
+          "operationId": "renameOutfit",
+          "parameters": [
+            {
+              "name": "outfitId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/catalog/v1/search/items": {
+        "get": {
+          "tags": ["Catalog"],
+          "summary": "searchCatalog",
+          "operationId": "searchCatalog",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "sortType",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "keyword",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "subcategory",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "creatorTargetId",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "creatorType",
+              "in": "query",
+              "required": false,
+              "type": "string",
+              "enum": ["User", "Group"]
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/api/marketplace/productinfo": {
+        "get": {
+          "tags": ["Catalog"],
+          "summary": "getProductInfoLegacy",
+          "operationId": "getProductInfoLegacy",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/catalog/v1/catalog/items/details": {
+        "post": {
+          "tags": ["Catalog"],
+          "summary": "getItemDetails",
+          "operationId": "getItemDetails",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "itemType": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/catalog/v1/recommendations/asset/{assetTypeId}": {
+        "get": {
+          "tags": ["Catalog"],
+          "summary": "getRecommendations",
+          "operationId": "getRecommendations",
+          "parameters": [
+            {
+              "name": "assetTypeId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "contextAssetId",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "numItems",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/comments/get-json": {
+        "get": {
+          "tags": ["Catalog"],
+          "summary": "getComments",
+          "operationId": "getComments",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "startIndex",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "thumbnailWidth",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "default": 100
+            },
+            {
+              "name": "thumbnailHeight",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "default": 100
+            },
+            {
+              "name": "thumbnailFormat",
+              "in": "query",
+              "required": false,
+              "type": "string",
+              "default": "PNG"
+            },
+            {
+              "name": "cachebuster",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/comments/post": {
+        "post": {
+          "tags": ["Catalog"],
+          "summary": "createComment",
+          "operationId": "createComment",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "assetId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/asset/toggle-profile": {
+        "post": {
+          "tags": ["Catalog"],
+          "summary": "addOrRemoveFromCollections",
+          "operationId": "addOrRemoveFromCollections",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetId": {
+                    "type": "string"
+                  },
+                  "addToProfile": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/inventory/v1/delete-from-inventory": {
+        "post": {
+          "tags": ["Catalog"],
+          "summary": "deleteFromInventory",
+          "operationId": "deleteFromInventory",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite": {
+        "get": {
+          "tags": ["Catalog"],
+          "summary": "getIsFavorited",
+          "operationId": "getIsFavorited",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        },
+        "post": {
+          "tags": ["Catalog"],
+          "summary": "createFavorite",
+          "operationId": "createFavorite",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Catalog"],
+          "summary": "deleteFavorite",
+          "operationId": "deleteFavorite",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/chat-settings": {
+        "get": {
+          "tags": ["Chat"],
+          "summary": "getChatSettings",
+          "operationId": "getChatSettings",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/get-user-conversations": {
+        "get": {
+          "tags": ["Chat"],
+          "summary": "getUserConversations",
+          "operationId": "getUserConversations",
+          "parameters": [
+            {
+              "name": "pageNumber",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "pageSize",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/mark-as-read": {
+        "post": {
+          "tags": ["Chat"],
+          "summary": "markAsRead",
+          "operationId": "markAsRead",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  },
+                  "endMessageId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/start-one-to-one-conversation": {
+        "post": {
+          "tags": ["Chat"],
+          "summary": "startOneToOneConversation",
+          "operationId": "startOneToOneConversation",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "participantUserId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/update-user-typing-status": {
+        "post": {
+          "tags": ["Chat"],
+          "summary": "updateTypingStatus",
+          "operationId": "updateTypingStatus",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isTyping": {
+                    "type": "boolean"
+                  },
+                  "conversationId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/send-message": {
+        "post": {
+          "tags": ["Chat"],
+          "summary": "sendMessage",
+          "operationId": "sendMessage",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/multi-get-latest-messages": {
+        "get": {
+          "tags": ["Chat"],
+          "summary": "multiGetLatestMessages",
+          "operationId": "multiGetLatestMessages",
+          "parameters": [
+            {
+              "name": "conversationIds",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/chat/v2/get-messages": {
+        "get": {
+          "tags": ["Chat"],
+          "summary": "getMessages",
+          "operationId": "getMessages",
+          "parameters": [
+            {
+              "name": "conversationId",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "pageSize",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "exclusiveStartMessageId",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/develop/upload": {
+        "post": {
+          "tags": ["Develop"],
+          "summary": "uploadAsset",
+          "operationId": "uploadAsset",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "assetType": { "type": "string" },
+                  "groupId": { "type": "string" }
+                },
+                "required": ["name", "assetType"]
+              }
+            },
+            {
+              "name": "file",
+              "in": "formData",
+              "required": true,
+              "type": "file"
+            }
+          ],
+          "consumes": ["multipart/form-data"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/develop/upload-version": {
+        "post": {
+          "tags": ["Develop"],
+          "summary": "uploadAssetVersion",
+          "operationId": "uploadAssetVersion",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetId": { "type": "string" }
+                },
+                "required": ["assetId"]
+              }
+            },
+            {
+              "name": "file",
+              "in": "formData",
+              "required": true,
+              "type": "file"
+            }
+          ],
+          "consumes": ["multipart/form-data"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/itemconfiguration/v1/creations/get-asset-details": {
+        "post": {
+          "tags": ["Develop"],
+          "summary": "getCreatedAssetDetails",
+          "operationId": "getCreatedAssetDetails",
+          "parameters": [
+            {
+              "name": "assetIds",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetIds": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/itemconfiguration/v1/creations/get-assets": {
+        "get": {
+          "tags": ["Develop"],
+          "summary": "getCreatedItems",
+          "operationId": "getCreatedItems",
+          "parameters": [
+            {
+              "name": "assetType",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "groupId",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/develop/v1/assets/{assetId}": {
+        "patch": {
+          "tags": ["Develop"],
+          "summary": "updateAsset",
+          "operationId": "updateAsset",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "genres": { "type": "array", "items": { "type": "string" } },
+                  "isCopyingAllowed": { "type": "boolean" },
+                  "enableComments": { "type": "boolean" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/itemconfiguration/v1/assets/{assetId}/update-price": {
+        "post": {
+          "tags": ["Develop"],
+          "summary": "setAssetPrice",
+          "operationId": "setAssetPrice",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "priceInRobux": { "type": "integer" },
+                  "priceInTickets": { "type": "integer" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/develop/v1/assets/genres": {
+        "get": {
+          "tags": ["Develop"],
+          "summary": "getAllGenres",
+          "operationId": "getAllGenres",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/develop/v1/universes/{universeId}/max-player-count": {
+        "patch": {
+          "tags": ["Develop"],
+          "summary": "setUniverseMaxPlayers",
+          "operationId": "setUniverseMaxPlayers",
+          "parameters": [
+            {
+              "name": "universeId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "maxPlayers": { "type": "integer" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/assets/{assetId}/resellers": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getResellers",
+          "operationId": "getResellers",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/users/{userId}/currency": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getRobux",
+          "operationId": "getRobux",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/groups/{groupId}/currency": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getRobuxGroup",
+          "operationId": "getRobuxGroup",
+          "parameters": [
+            {
+              "name": "groupId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/assets/{assetId}/users/{userId}/resellable-copies": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getResellableCopies",
+          "operationId": "getResellableCopies",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/economy/v1/purchases/products/{productId}": {
+        "post": {
+          "tags": ["Economy"],
+          "summary": "purchaseItem",
+          "operationId": "purchaseItem",
+          "parameters": [
+            {
+              "name": "productId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "assetId": { "type": "string" },
+                  "expectedPrice": { "type": "number" },
+                  "expectedSellerId": { "type": "string" },
+                  "userAssetId": { "type": "string" },
+                  "expectedCurrency": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/assets/{assetId}/resellable-copies/{userAssetId}": {
+        "patch": {
+          "tags": ["Economy"],
+          "summary": "setResellableAssetPrice",
+          "operationId": "setResellableAssetPrice",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "userAssetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "number" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v1/assets/{assetId}/resale-data": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getResaleData",
+          "operationId": "getResaleData",
+          "parameters": [
+            {
+              "name": "assetId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/users/{userId}/transactions": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getTransactions",
+          "operationId": "getTransactions",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "transactionType",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/groups/{groupId}/transactions": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getGroupTransactions",
+          "operationId": "getGroupTransactions",
+          "parameters": [
+            {
+              "name": "groupId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "transactionType",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/users/{userId}/transaction-totals": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getTransactionSummary",
+          "operationId": "getTransactionSummary",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "timeFrame",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "transactionType",
+              "in": "query",
+              "required": false,
+              "type": "string",
+              "default": "summary"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/groups/{groupId}/transaction-totals": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getGroupTransactionSummary",
+          "operationId": "getGroupTransactionSummary",
+          "parameters": [
+            {
+              "name": "groupId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "timeFrame",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "transactionType",
+              "in": "query",
+              "required": false,
+              "type": "string",
+              "default": "summary"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/currency-exchange/market/activity": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getMarketActivity",
+          "operationId": "getMarketActivity",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/currency-exchange/orders/create": {
+        "post": {
+          "tags": ["Economy"],
+          "summary": "createCurrencyExchangeOrder",
+          "operationId": "createCurrencyExchangeOrder",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "amount": { "type": "number" },
+                  "sourceCurrency": { "type": "string" },
+                  "isMarketOrder": { "type": "boolean" },
+                  "desiredRate": { "type": "number" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/currency-exchange/orders/my/count": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "countOpenPositions",
+          "operationId": "countOpenPositions",
+          "parameters": [
+            {
+              "name": "currency",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/currency-exchange/orders/my": {
+        "get": {
+          "tags": ["Economy"],
+          "summary": "getOpenPositions",
+          "operationId": "getOpenPositions",
+          "parameters": [
+            {
+              "name": "limit",
+              "in": "query",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "name": "startId",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "currency",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/economy/v2/currency-exchange/orders/{orderId}/close": {
+        "post": {
+          "tags": ["Economy"],
+          "summary": "closePosition",
+          "operationId": "closePosition",
+          "parameters": [
+            {
+              "name": "orderId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/sub-category/{subCategoryId}/posts": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getPostsInSubcategory",
+          "operationId": "getPostsInSubcategory",
+          "parameters": [
+            {
+              "name": "subCategoryId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/threads/{threadId}/replies": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getRepliesToThread",
+          "operationId": "getRepliesToThread",
+          "parameters": [
+            {
+              "name": "threadId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/threads/{threadId}/info": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getThreadInfoById",
+          "operationId": "getThreadInfoById",
+          "parameters": [
+            {
+              "name": "threadId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/posts/{postId}/info": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getPostById",
+          "operationId": "getPostById",
+          "parameters": [
+            {
+              "name": "postId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/posts/{postId}/mark-as-read": {
+        "post": {
+          "tags": ["Forums"],
+          "summary": "markAsRead",
+          "operationId": "markAsReadForum",
+          "parameters": [
+            {
+              "name": "postId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/sub-category/{subCategoryId}/thread": {
+        "post": {
+          "tags": ["Forums"],
+          "summary": "createThread",
+          "operationId": "createThread",
+          "parameters": [
+            {
+              "name": "subCategoryId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "post": { "type": "string" },
+                  "subject": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/posts/{postId}/reply": {
+        "post": {
+          "tags": ["Forums"],
+          "summary": "replyToPost",
+          "operationId": "replyToPost",
+          "parameters": [
+            {
+              "name": "postId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "post": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/sub-category/{subCategoryId}/info": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getSubCategoryInfo",
+          "operationId": "getSubCategoryInfo",
+          "parameters": [
+            {
+              "name": "subCategoryId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/posts/{postId}": {
+        "delete": {
+          "tags": ["Forums"],
+          "summary": "deletePost",
+          "operationId": "deletePostForum",
+          "parameters": [
+            {
+              "name": "postId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/forums/v1/users/{userId}/posts": {
+        "get": {
+          "tags": ["Forums"],
+          "summary": "getPostsByUser",
+          "operationId": "getPostsByUser",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/user/friend-requests/count": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFriends",
+          "operationId": "getFriends",
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/followers/count": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFollowersCount",
+          "operationId": "getFollowersCount",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/followers": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFollowers",
+          "operationId": "getFollowers",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/followings/count": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFollowingsCount",
+          "operationId": "getFollowingsCount",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/followings": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFollowings",
+          "operationId": "getFollowings",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "required": false,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{authenticatedUserId}/friends/statuses": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFriendStatus",
+          "operationId": "getFriendStatus",
+          "parameters": [
+            {
+              "name": "authenticatedUserId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "userIds",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/my/friends/requests": {
+        "get": {
+          "tags": ["Friends"],
+          "summary": "getFriendRequests",
+          "operationId": "getFriendRequests",
+          "parameters": [
+            {
+              "name": "limit",
+              "in": "query",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
+            }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/unfriend": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "unfriendUser",
+          "operationId": "unfriendUser",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/accept-friend-request": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "acceptFriendRequest",
+          "operationId": "acceptFriendRequest",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/decline-friend-request": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "declineFriendRequest",
+          "operationId": "declineFriendRequest",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/request-friendship": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "sendFriendRequest",
+          "operationId": "sendFriendRequest",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/follow": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "followUser",
+          "operationId": "followUser",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/users/{userId}/unfollow": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "unfollowUser",
+          "operationId": "unfollowUser",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/friends/v1/user/following-exists": {
+        "post": {
+          "tags": ["Friends"],
+          "summary": "getFollowingStatus",
+          "operationId": "getFollowingStatus",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "targetUserIds": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v2/users/{userId}/games": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getUserGames",
+          "operationId": "getUserGames",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v2/groups/{groupId}/games": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getGroupGames",
+          "operationId": "getGroupGames",
+          "parameters": [
+            {
+              "name": "groupId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "cursor",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games/sorts": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getGameSorts",
+          "operationId": "getGameSorts",
+          "parameters": [
+            {
+              "name": "gameSortsContext",
+              "in": "query",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games/list": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getGameList",
+          "operationId": "getGameList",
+          "parameters": [
+            { "name": "sortToken", "in": "query", "required": true, "type": "string" },
+            { "name": "maxRows",   "in": "query", "required": true, "type": "integer" },
+            { "name": "genre",     "in": "query", "required": false, "type": "string" },
+            { "name": "keyword",   "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v2/games/{universeId}/media": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getGameMedia",
+          "operationId": "getGameMedia",
+          "parameters": [
+            { "name": "universeId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/game/get-join-script": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "launchGame",
+          "operationId": "launchGame",
+          "parameters": [
+            { "name": "placeId", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games/multiget-place-details": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "multiGetPlaceDetails",
+          "operationId": "multiGetPlaceDetails",
+          "parameters": [
+            { "name": "placeIds", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "multiGetUniverseDetails",
+          "operationId": "multiGetUniverseDetails",
+          "parameters": [
+            { "name": "universeIds", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/getgameinstancesjson": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "getServers",
+          "operationId": "getServers",
+          "parameters": [
+            { "name": "placeId",    "in": "query", "required": true, "type": "string" },
+            { "name": "startIndex", "in": "query", "required": false, "type": "integer" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games/votes": {
+        "get": {
+          "tags": ["Games"],
+          "summary": "multiGetGameVotes",
+          "operationId": "multiGetGameVotes",
+          "parameters": [
+            { "name": "universeIds", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/games/v1/games/{universeId}/user-votes": {
+        "patch": {
+          "tags": ["Games"],
+          "summary": "voteOnGame",
+          "operationId": "voteOnGame",
+          "parameters": [
+            { "name": "universeId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "vote": { "type": "boolean" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/users/{userId}/groups/roles": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getUserGroups",
+          "operationId": "getUserGroups",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/roles/{rolesetId}/permissions": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getPermissionsForRoleset",
+          "operationId": "getPermissionsForRoleset",
+          "parameters": [
+            { "name": "groupId",   "in": "path", "required": true, "type": "string" },
+            { "name": "rolesetId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/users": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "joinGroup",
+          "operationId": "joinGroup",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/users/{userId}": {
+        "delete": {
+          "tags": ["Groups"],
+          "summary": "leaveGroup",
+          "operationId": "leaveGroup",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "userId",  "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        },
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setUserRole",
+          "operationId": "setUserRole",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "userId",  "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "roleId": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/status": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setStatus",
+          "operationId": "setStatus",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/create": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "createGroup",
+          "operationId": "createGroup",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "formData",
+              "required": true,
+              "type": "file",
+              "description": "icon"
+            },
+            { "name": "name",        "in": "formData", "required": true, "type": "string" },
+            { "name": "description", "in": "formData", "required": true, "type": "string" }
+          ],
+          "consumes": ["multipart/form-data"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/roles": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getRoles",
+          "operationId": "getRoles",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/users": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getMembers",
+          "operationId": "getMembers",
+          "parameters": [
+            { "name": "groupId",   "in": "path", "required": true, "type": "string" },
+            { "name": "cursor",    "in": "query", "required": false, "type": "string" },
+            { "name": "limit",     "in": "query", "required": false, "type": "integer" },
+            { "name": "sortOrder", "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/roles/{rolesetId}/users": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getRolesetMembers",
+          "operationId": "getRolesetMembers",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "rolesetId", "in": "path", "required": true, "type": "string" },
+            { "name": "cursor", "in": "query", "required": false, "type": "string" },
+            { "name": "limit", "in": "query", "required": false, "type": "integer" },
+            { "name": "sortOrder", "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v2/groups/{groupId}/wall/posts": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getWall",
+          "operationId": "getWall",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "sortOrder", "in": "query", "required": false, "type": "string" },
+            { "name": "limit", "in": "query", "required": false, "type": "integer" },
+            { "name": "cursor", "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/wall/posts": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "postToWall",
+          "operationId": "postToWall",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/wall/posts/{postId}": {
+        "delete": {
+          "tags": ["Groups"],
+          "summary": "deleteWallPost",
+          "operationId": "deleteWallPost",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "postId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getGroupInfo",
+          "operationId": "getGroupInfo",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/claim-ownership": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "claimGroupOwnership",
+          "operationId": "claimGroupOwnership",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/v1/user/groups/primary": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "setGroupAsPrimary",
+          "operationId": "setGroupAsPrimary",
+          "parameters": [
+            { "name": "groupId", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/user/groups/primary": {
+        "delete": {
+          "tags": ["Groups"],
+          "summary": "removePrimaryGroup",
+          "operationId": "removePrimaryGroup",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/users/{userId}/groups/primary/role": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getPrimaryGroup",
+          "operationId": "getPrimaryGroup",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/icon": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setGroupIcon",
+          "operationId": "setGroupIcon",
+          "parameters": [
+            { "name": "groupId", "in": "query", "required": true, "type": "string" },
+            { "name": "icon", "in": "formData", "required": true, "type": "file" }
+          ],
+          "consumes": ["multipart/form-data"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/description": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setGroupDescription",
+          "operationId": "setGroupDescription",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "description",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/settings": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getGroupSettings",
+          "operationId": "getGroupSettings",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        },
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setGroupSettings",
+          "operationId": "setGroupSettings",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isApprovalRequired": { "type": "boolean" },
+                  "areEnemiesAllowed": { "type": "boolean" },
+                  "areGroupFundsVisible": { "type": "boolean" },
+                  "areGroupGamesVisible": { "type": "boolean" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/change-owner": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "changeGroupOwner",
+          "operationId": "changeGroupOwner",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": { "type": "string" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/rolesets/create": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "createRole",
+          "operationId": "createRole",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "rank": { "type": "integer" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/rolesets": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "editRole",
+          "operationId": "editRole",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "rank": { "type": "integer" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        },
+        "delete": {
+          "tags": ["Groups"],
+          "summary": "deleteRole",
+          "operationId": "deleteRole",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/roles/{roleId}/permissions": {
+        "patch": {
+          "tags": ["Groups"],
+          "summary": "setRolePermissions",
+          "operationId": "setRolePermissions",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "roleId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "permissions": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/payouts": {
+        "post": {
+          "tags": ["Groups"],
+          "summary": "oneTimePayout",
+          "operationId": "oneTimePayout",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PayoutType": { "type": "string" },
+                  "Recipients": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "recipientId": { "type": "string" },
+                        "recipientType": { "type": "string" },
+                        "amount": { "type": "number" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/groups/v1/groups/{groupId}/audit-log": {
+        "get": {
+          "tags": ["Groups"],
+          "summary": "getGroupAuditLog",
+          "operationId": "getGroupAuditLog",
+          "parameters": [
+            { "name": "groupId", "in": "path", "required": true, "type": "string" },
+            { "name": "cursor", "in": "query", "required": false, "type": "string" },
+            { "name": "action", "in": "query", "required": false, "type": "string" },
+            { "name": "userId", "in": "query", "required": false, "type": "string" },
+            { "name": "sortOrder", "in": "query", "required": false, "type": "string", "default": "desc" },
+            { "name": "limit", "in": "query", "required": false, "type": "integer", "default": 100 }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/inventory/v1/users/{userId}/items/Asset/{assetId}": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getOwnedCopies",
+          "operationId": "getOwnedCopies",
+          "parameters": [
+            { "name": "userId",   "in": "path", "required": true, "type": "string" },
+            { "name": "assetId",  "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/inventory/list-json": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getInventory",
+          "operationId": "getInventory",
+          "parameters": [
+            { "name": "userId",       "in": "query", "required": true,  "type": "string" },
+            { "name": "assetTypeId",  "in": "query", "required": true,  "type": "string" },
+            { "name": "cursor",       "in": "query", "required": false, "type": "string" },
+            { "name": "itemsPerPage", "in": "query", "required": false, "type": "integer" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/favorites/list-json": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getFavorites",
+          "operationId": "getFavorites",
+          "parameters": [
+            { "name": "userId",       "in": "query", "required": true,  "type": "string" },
+            { "name": "assetTypeId",  "in": "query", "required": true,  "type": "string" },
+            { "name": "pageNumber",   "in": "query", "required": false, "type": "integer" },
+            { "name": "itemsPerPage", "in": "query", "required": false, "type": "integer" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/profile/robloxcollections-json": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getCollections",
+          "operationId": "getCollections",
+          "parameters": [
+            { "name": "userId", "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/inventory/v1/users/{userId}/assets/collectibles": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getCollectibleInventory",
+          "operationId": "getCollectibleInventory",
+          "parameters": [
+            { "name": "userId",      "in": "path", "required": true,  "type": "string" },
+            { "name": "cursor",      "in": "query", "required": false, "type": "string" },
+            { "name": "limit",       "in": "query", "required": true,  "type": "integer" },
+            { "name": "assetTypeId", "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/inventory/v2/assets/{assetId}/owners": {
+        "get": {
+          "tags": ["Inventory"],
+          "summary": "getCollectibleOwners",
+          "operationId": "getCollectibleOwners",
+          "parameters": [
+            { "name": "assetId", "in": "path", "required": true, "type": "string" },
+            { "name": "cursor",  "in": "query", "required": false, "type": "string" },
+            { "name": "limit",   "in": "query", "required": false, "type": "integer" },
+            { "name": "sort",    "in": "query", "required": false, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/presence/v1/presence/users": {
+        "post": {
+          "tags": ["Presence"],
+          "summary": "multiGetPresence",
+          "operationId": "multiGetPresence",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userIds": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/messages/send": {
+        "post": {
+          "tags": ["Private Messages"],
+          "summary": "sendMessage",
+          "operationId": "sendPrivateMessage",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "recipientid":          { "type": "string" },
+                  "body":                 { "type": "string" },
+                  "subject":              { "type": "string" },
+                  "replyMessageId":       { "type": "string" },
+                  "includePreviousMessage": { "type": "boolean" }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/announcements": {
+        "get": {
+          "tags": ["Private Messages"],
+          "summary": "getAnnouncements",
+          "operationId": "getAnnouncements",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/messages": {
+        "get": {
+          "tags": ["Private Messages"],
+          "summary": "getMessages",
+          "operationId": "getPMMessages",
+          "parameters": [
+            { "name": "messageTab",  "in": "query", "required": true,  "type": "string" },
+            { "name": "pageSize",    "in": "query", "required": true,  "type": "integer" },
+            { "name": "pageNumber",  "in": "query", "required": true,  "type": "integer" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/messages/{isRead}": {
+        "post": {
+          "tags": ["Private Messages"],
+          "summary": "toggleReadStatus",
+          "operationId": "toggleReadStatus",
+          "parameters": [
+            { "name": "isRead",     "in": "path", "required": true,  "type": "string", "enum":["mark-read","mark-unread"] },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messageIds": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/messages/{isArchived}": {
+        "post": {
+          "tags": ["Private Messages"],
+          "summary": "toggleArchiveStatus",
+          "operationId": "toggleArchiveStatus",
+          "parameters": [
+            { "name": "isArchived", "in": "path", "required": true,  "type": "string", "enum":["archive","unarchive"] },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messageIds": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/privatemessages/v1/messages/unread/count": {
+        "get": {
+          "tags": ["Private Messages"],
+          "summary": "getUnreadMessageCount",
+          "operationId": "getUnreadMessageCount",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/users/avatar": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetUserThumbnails",
+          "operationId": "multiGetUserThumbnails",
+          "parameters": [
+            { "name": "userIds", "in": "query", "required": true,  "type": "string" },
+            { "name": "size",    "in": "query", "required": true,  "type": "string" },
+            { "name": "format",  "in": "query", "required": true,  "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/users/avatar-headshot": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetUserHeadshots",
+          "operationId": "multiGetUserHeadshots",
+          "parameters": [
+            { "name": "userIds", "in": "query", "required": true,  "type": "string" },
+            { "name": "size",    "in": "query", "required": true,  "type": "string" },
+            { "name": "format",  "in": "query", "required": true,  "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/users/outfits": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetOutfitThumbnails",
+          "operationId": "multiGetOutfitThumbnails",
+          "parameters": [
+            { "name": "userOutfitIds", "in": "query", "required": true,  "type": "string" },
+            { "name": "size",          "in": "query", "required": true,  "type": "string" },
+            { "name": "format",        "in": "query", "required": true,  "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/groups/icons": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetGroupIcons",
+          "operationId": "multiGetGroupIcons",
+          "parameters": [
+            { "name": "groupIds", "in": "query", "required": true, "type": "string" },
+            { "name": "format",   "in": "query", "required": false,"type": "string" },
+            { "name": "size",     "in": "query", "required": false,"type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/assets": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetAssetThumbnails",
+          "operationId": "multiGetAssetThumbnails",
+          "parameters": [
+            { "name": "assetIds", "in": "query", "required": true, "type": "string" },
+            { "name": "format",   "in": "query", "required": true, "type": "string" },
+            { "name": "size",     "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/thumbnails/v1/games/icons": {
+        "get": {
+          "tags": ["Thumbnails"],
+          "summary": "multiGetUniverseIcons",
+          "operationId": "multiGetUniverseIcons",
+          "parameters": [
+            { "name": "universeIds", "in": "query", "required": true, "type": "string" },
+            { "name": "size",        "in": "query", "required": true, "type": "string" },
+            { "name": "format",      "in": "query", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/{tradeType}": {
+        "get": {
+          "tags": ["Trades"],
+          "summary": "getMyTrades",
+          "operationId": "getMyTrades",
+          "parameters": [
+            { "name": "tradeType", "in": "path", "required": true,  "type": "string" },
+            { "name": "cursor",    "in": "query","required": false,"type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/{tradeId}": {
+        "get": {
+          "tags": ["Trades"],
+          "summary": "getTradeDetails",
+          "operationId": "getTradeDetails",
+          "parameters": [
+            { "name": "tradeId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/{tradeId}/accept": {
+        "post": {
+          "tags": ["Trades"],
+          "summary": "acceptTrade",
+          "operationId": "acceptTrade",
+          "parameters": [
+            { "name": "tradeId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/{tradeId}/decline": {
+        "post": {
+          "tags": ["Trades"],
+          "summary": "declineTrade",
+          "operationId": "declineTrade",
+          "parameters": [
+            { "name": "tradeId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/inbound/count": {
+        "get": {
+          "tags": ["Trades"],
+          "summary": "getInboundTradeCount",
+          "operationId": "getInboundTradeCount",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/send": {
+        "post": {
+          "tags": ["Trades"],
+          "summary": "createTrade",
+          "operationId": "createTrade",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "offers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "robux":         { "type": "number" },
+                        "userAssetIds":  { "type": "array", "items": { "type": "string" } },
+                        "userId":        { "type": "string" }
+                      }
+                    }
+                  },
+                  "requests": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "robux":         { "type": "number" },
+                        "userAssetIds":  { "type": "array", "items": { "type": "string" } },
+                        "userId":        { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/trades/v1/trades/counter": {
+        "post": {
+          "tags": ["Trades"],
+          "summary": "counterTrade",
+          "operationId": "counterTrade",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "offers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "robux":         { "type": "number" },
+                        "userAssetIds":  { "type": "array", "items": { "type": "string" } },
+                        "userId":        { "type": "string" }
+                      }
+                    }
+                  },
+                  "requests": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "robux":         { "type": "number" },
+                        "userAssetIds":  { "type": "array", "items": { "type": "string" } },
+                        "userId":        { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/v1/users/authenticated": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "getMyInfo",
+          "operationId": "getMyInfo",
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/v1/users/{userId}": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "getUserInfo",
+          "operationId": "getUserInfo",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/v1/users/{userId}/status": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "getUserStatus",
+          "operationId": "getUserStatus",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        },
+        "patch": {
+          "tags": ["Users"],
+          "summary": "updateStatus",
+          "operationId": "updateStatus",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": { "status": { "type": "string" } }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/v1/users/{userId}/username-history": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "getPreviousUsernames",
+          "operationId": "getPreviousUsernames",
+          "parameters": [
+            { "name": "userId",  "in": "path", "required": true, "type": "string" },
+            { "name": "limit",   "in": "query", "required": false,"type": "integer" },
+            { "name": "cursor",  "in": "query", "required": false,"type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/results": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "searchUsers",
+          "operationId": "searchUsers",
+          "parameters": [
+            { "name": "keyword",   "in": "query", "required": true, "type": "string" },
+            { "name": "maxRows",   "in": "query", "required": true, "type": "integer" },
+            { "name": "startIndex","in": "query", "required": true, "type": "integer" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/premiumfeatures/v1/users/{userId}/validate-membership": {
+        "get": {
+          "tags": ["Users"],
+          "summary": "getMembershipType",
+          "operationId": "getMembershipType",
+          "parameters": [
+            { "name": "userId", "in": "path", "required": true, "type": "string" }
+          ],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      },
+      "/users/v1/usernames/users": {
+        "post": {
+          "tags": ["Users"],
+          "summary": "getUserIdByUsername",
+          "operationId": "getUserIdByUsername",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usernames": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": ["application/json"],
+          "responses": {
+            "200": { "description": "Coming Soon ECS:R API DOCS" }
+          }
+        }
+      }
+    }
+  }
