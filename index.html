@@ -56,6 +56,20 @@
     
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
+        function replaceDomain(text) {
+            return text.replace(/https:\/\/ecsr-api-docs\.vercel\.app/g, 'https://ecsr.io');
+        }
+
+        function applyTextReplacements(root) {
+            root.querySelectorAll('*').forEach(el => {
+                el.childNodes.forEach(child => {
+                    if (child.nodeType === Node.TEXT_NODE && child.textContent.includes('https://ecsr-api-docs.vercel.app')) {
+                        child.textContent = replaceDomain(child.textContent);
+                    }
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('cookie-input');
             const saved = localStorage.getItem('roblosecurity');
@@ -99,12 +113,24 @@
                         requestCredentials: 'include',
                         requestInterceptor: (req) => {
                             const originalUrl = new URL(req.url);
-                            const proxyBase = 'https://ecsr-api-docs.vercel.app';
-                            req.url = `${proxyBase}${originalUrl.pathname}${originalUrl.search}`;
+                            req.url = `https://ecsr-api-docs.vercel.app${originalUrl.pathname}${originalUrl.search}`;
                             return req;
                         }
                     });
                     window.ui = ui;
+
+                    setTimeout(() => applyTextReplacements(document.body), 500);
+
+                    const observer = new MutationObserver(mutations => {
+                        mutations.forEach(m => {
+                            m.addedNodes.forEach(node => {
+                                if (node.nodeType === Node.ELEMENT_NODE) {
+                                    applyTextReplacements(node);
+                                }
+                            });
+                        });
+                    });
+                    observer.observe(document.body, { childList: true, subtree: true });
                 });
         });
     </script>
