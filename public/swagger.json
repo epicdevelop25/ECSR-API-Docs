@@ -277,36 +277,11 @@
           "summary": "getAlert",
           "operationId": "getAlert",
           "responses": {
-          "200": {
-            "description": "Returns the current alert banner",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "IsVisible": {
-                  "type": "boolean"
-                },
-                "Text": {
-                  "type": "string"
-                },
-                "LinkText": {
-                  "type": "string"
-                },
-                "LinkUrl": {
-                  "type": "string",
-                  "format": "uri"
-                }
-              },
-              "required": ["IsVisible", "Text", "LinkText", "LinkUrl"]
-            },
-            "examples": {
-              "application/json": {
-                "IsVisible": true,
-                "Text": "Click here to join the discord server for giveaways, new items, news, and more!",
-                "LinkText": "",
-                "LinkUrl": "https://discord.gg/economysimulator"
-              }
+            "200": {
+              "description": "Coming Soon ECS:R API DOCS"
             }
           }
+        }
       },
       "/auth/v2/login": {
         "post": {
