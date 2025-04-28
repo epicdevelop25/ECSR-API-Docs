@@ -6,15 +6,8 @@
     <title>ECS:R API Documentation</title>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        /* Hide default Swagger topbar */
-        .swagger-ui .topbar {
-            display: none;
-        }
-        /* Custom header for .ROBLOSECURITY input */
+        body { margin: 0; padding: 0; }
+        .swagger-ui .topbar { display: none; }
         .custom-header {
             background-color: #222;
             padding: 10px;
@@ -42,7 +35,6 @@
     </style>
 </head>
 <body>
-    <!-- Custom header for pasting .ROBLOSECURITY cookie -->
     <div class="custom-header">
         <label for="cookie-input" style="font-weight: bold;">.ROBLOSECURITY:</label>
         <input type="text" id="cookie-input" placeholder="Paste your .ROBLOSECURITY cookie here" />
@@ -54,23 +46,28 @@
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Pre-populate input with saved cookie
             const input = document.getElementById('cookie-input');
-            input.value = localStorage.getItem('roblosecurity') || '';
-            
-            // Save cookie to localStorage on button click
+            // Load existing cookie
+            const saved = localStorage.getItem('roblosecurity');
+            if (saved) {
+                document.cookie = `.ROBLOSECURITY=${saved}; path=/`;
+                input.value = saved;
+            }
+
             document.getElementById('set-cookie').addEventListener('click', function() {
                 const val = input.value.trim();
-                if(val) {
+                if (val) {
                     localStorage.setItem('roblosecurity', val);
+                    document.cookie = `.ROBLOSECURITY=${val}; path=/`;
                     alert('Cookie set for Swagger UI requests');
                 } else {
                     localStorage.removeItem('roblosecurity');
+                    document.cookie = `.ROBLOSECURITY=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
                     alert('Cookie cleared');
                 }
             });
 
-            // Initialize Swagger UI with requestInterceptor to add Cookie header
+            // Initialize Swagger UI sending credentials
             const ui = SwaggerUIBundle({
                 url: "/public/swagger.json",
                 dom_id: '#swagger-ui',
@@ -84,13 +81,7 @@
                 defaultModelsExpandDepth: 1,
                 defaultModelExpandDepth: 1,
                 displayRequestDuration: true,
-                requestInterceptor: function(request) {
-                    const cookie = localStorage.getItem('roblosecurity');
-                    if (cookie) {
-                        request.headers['Cookie'] = ".ROBLOSECURITY=" + cookie;
-                    }
-                    return request;
-                }
+                requestCredentials: 'include'
             });
             window.ui = ui;
         });
