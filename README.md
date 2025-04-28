@@ -6,9 +6,6 @@
 > ⚠️ **Usage Notice**  
 > • Do **not** use these endpoints for malicious activities.  
 > • Ensure any application you build complies with ECSR’s Terms of Service.  
->
-> 🔒 **Private Testing (Coming Soon)**  
-> You will soon be able to provide a `.ROBLOSECURITY` cookie at the top of the site to fully test authenticated endpoints.
 
 ---
 ## Inventory
