@@ -3,7 +3,7 @@
     "info": {
       "title": "ECS:R API DOCS",
       "version": "1.0.0",
-      "description": "The below APIs are documented from over 2 years ago. They may be outdated and some APIs may be missing. We will be working on adding any missing APIs and fixing outdated ones."
+      "description": "The below APIs may be outdated and some APIs may be missing. We will be working on adding any missing APIs and fixing outdated ones."
     },
     "basePath": "/apisite",
     "paths": {
