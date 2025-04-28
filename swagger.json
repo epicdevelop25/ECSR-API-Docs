@@ -2641,19 +2641,6 @@
           }
         }
       },
-      "/groups/v1/groups/{groupId}/users": {
-        "post": {
-          "tags": ["Groups"],
-          "summary": "joinGroup",
-          "operationId": "joinGroup",
-          "parameters": [
-            { "name": "groupId", "in": "path", "required": true, "type": "string" }
-          ],
-          "responses": {
-            "200": { "description": "Coming Soon ECS:R API DOCS" }
-          }
-        }
-      },
       "/groups/v1/groups/{groupId}/users/{userId}": {
         "delete": {
           "tags": ["Groups"],
@@ -2741,21 +2728,61 @@
         }
       },
       "/groups/v1/groups/{groupId}/users": {
-        "get": {
-          "tags": ["Groups"],
-          "summary": "getMembers",
-          "operationId": "getMembers",
-          "parameters": [
-            { "name": "groupId",   "in": "path", "required": true, "type": "string" },
-            { "name": "cursor",    "in": "query", "required": false, "type": "string" },
-            { "name": "limit",     "in": "query", "required": false, "type": "integer" },
-            { "name": "sortOrder", "in": "query", "required": false, "type": "string" }
-          ],
-          "responses": {
-            "200": { "description": "Coming Soon ECS:R API DOCS" }
+      "get": {
+        "tags": ["groups"],
+        "summary": "getMembers",
+        "operationId": "getMembers",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Coming Soon ECS:R API DOCS"
           }
         }
       },
+      "post": {
+        "tags": ["groups"],
+        "summary": "joinGroup",
+        "operationId": "joinGroup",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Coming Soon ECS:R API DOCS"
+          }
+        }
+      }
+    },
       "/groups/v1/groups/{groupId}/roles/{rolesetId}/users": {
         "get": {
           "tags": ["Groups"],
