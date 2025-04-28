@@ -19,13 +19,51 @@
         .swagger-ui .topbar {
             display: none;
         }
+        .cookie-input {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cookie-input label {
+            font-weight: bold;
+        }
+        .cookie-input input {
+            flex: 1;
+            padding: 6px;
+            font-size: 14px;
+        }
+        .cookie-input button {
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <div class="cookie-input">
+        <label for="roblosec">.ROBLOSECURITY:</label>
+        <input id="roblosec" type="text" placeholder="Paste your .ROBLOSECURITY cookie here">
+        <button id="setCookie">Set Cookie</button>
+    </div>
     <div id="swagger-ui"></div>
     
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
+        // Store the cookie value
+        let roblosecurityCookie = '';
+
+        document.getElementById('setCookie').addEventListener('click', () => {
+            roblosecurityCookie = document.getElementById('roblosec').value.trim();
+            if (roblosecurityCookie) {
+                alert('Cookie set successfully');
+            } else {
+                alert('Please enter a valid .ROBLOSECURITY cookie');
+            }
+        });
+
         window.onload = function() {
             const ui = SwaggerUIBundle({
                 url: "/public/swagger.json",
@@ -39,7 +77,15 @@
                 docExpansion: "list",
                 defaultModelsExpandDepth: 1,
                 defaultModelExpandDepth: 1,
-                displayRequestDuration: true
+                displayRequestDuration: true,
+                // Intercept each request to add Cookie header
+                requestInterceptor: (request) => {
+                    if (roblosecurityCookie) {
+                        // Set the .ROBLOSECURITY cookie
+                        request.headers['Cookie'] = `.ROBLOSECURITY=${roblosecurityCookie}`;
+                    }
+                    return request;
+                }
             });
             window.ui = ui;
         };
