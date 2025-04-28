@@ -6,8 +6,8 @@
         "https"
     ],
     "x-swagger-ui-config": {
-    "filter": true,
-    "filterPlaceholder": "Search APIs…"
+        "filter": true,
+        "filterPlaceholder": "Search APIs…"
     },
     "info": {
       "title": "ECS:R API DOCS",
