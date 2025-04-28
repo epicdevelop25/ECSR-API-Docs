@@ -82,6 +82,7 @@
                     spec.host = 'ecsr.io';
                     spec.schemes = ['https'];
                     spec.basePath = '/apisite';
+
                     const ui = SwaggerUIBundle({
                         spec: spec,
                         dom_id: '#swagger-ui',
@@ -95,7 +96,13 @@
                         defaultModelsExpandDepth: 1,
                         defaultModelExpandDepth: 1,
                         displayRequestDuration: true,
-                        requestCredentials: 'include'
+                        requestCredentials: 'include',
+                        requestInterceptor: (req) => {
+                            const originalUrl = new URL(req.url);
+                            const proxyBase = 'https://ecsr-api-docs.vercel.app';
+                            req.url = `${proxyBase}${originalUrl.pathname}${originalUrl.search}`;
+                            return req;
+                        }
                     });
                     window.ui = ui;
                 });
