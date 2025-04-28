@@ -6,37 +6,48 @@
     <title>ECS:R API Documentation</title>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css">
     <style>
-        body { margin: 0; padding: 0; }
+        body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }
         .swagger-ui .topbar { display: none; }
         .custom-header {
-            background-color: #222;
-            padding: 10px;
-            color: #fff;
-            text-align: center;
+            background-color: #fafafa;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .custom-header label {
+            font-weight: 600;
+            font-size: 14px;
         }
         .custom-header input {
-            width: 300px;
-            margin: 0 10px;
-            padding: 5px;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 5px 8px;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            border: 1px solid #555;
+            flex: 1;
+            max-width: 400px;
         }
         .custom-header button {
-            padding: 5px 10px;
-            border: none;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 6px 12px;
+            background-color: #8bc34a;
+            border: 1px solid #8bc34a;
             border-radius: 4px;
-            background-color: #28a745;
-            color: #fff;
+            color: #ffffff;
             cursor: pointer;
         }
         .custom-header button:hover {
-            background-color: #218838;
+            background-color: #7cb342;
+            border-color: #7cb342;
         }
     </style>
 </head>
 <body>
     <div class="custom-header">
-        <label for="cookie-input" style="font-weight: bold;">.ROBLOSECURITY:</label>
+        <label for="cookie-input">.ROBLOSECURITY:</label>
         <input type="text" id="cookie-input" placeholder="Paste your .ROBLOSECURITY cookie here" />
         <button id="set-cookie">Set Cookie</button>
     </div>
@@ -47,13 +58,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('cookie-input');
-            // Load existing cookie
             const saved = localStorage.getItem('roblosecurity');
             if (saved) {
                 document.cookie = `.ROBLOSECURITY=${saved}; path=/`;
                 input.value = saved;
             }
-
             document.getElementById('set-cookie').addEventListener('click', function() {
                 const val = input.value.trim();
                 if (val) {
@@ -67,23 +76,29 @@
                 }
             });
 
-            // Initialize Swagger UI sending credentials
-            const ui = SwaggerUIBundle({
-                url: "/public/swagger.json",
-                dom_id: '#swagger-ui',
-                deepLinking: true,
-                presets: [
-                    SwaggerUIBundle.presets.apis,
-                    SwaggerUIBundle.SwaggerUIStandalonePreset
-                ],
-                layout: "BaseLayout",
-                docExpansion: "list",
-                defaultModelsExpandDepth: 1,
-                defaultModelExpandDepth: 1,
-                displayRequestDuration: true,
-                requestCredentials: 'include'
-            });
-            window.ui = ui;
+            fetch('/public/swagger.json')
+                .then(res => res.json())
+                .then(spec => {
+                    spec.host = 'ecsr.io';
+                    spec.schemes = ['https'];
+                    spec.basePath = '/apisite';
+                    const ui = SwaggerUIBundle({
+                        spec: spec,
+                        dom_id: '#swagger-ui',
+                        deepLinking: true,
+                        presets: [
+                            SwaggerUIBundle.presets.apis,
+                            SwaggerUIBundle.SwaggerUIStandalonePreset
+                        ],
+                        layout: "BaseLayout",
+                        docExpansion: "list",
+                        defaultModelsExpandDepth: 1,
+                        defaultModelExpandDepth: 1,
+                        displayRequestDuration: true,
+                        requestCredentials: 'include'
+                    });
+                    window.ui = ui;
+                });
         });
     </script>
 </body>
