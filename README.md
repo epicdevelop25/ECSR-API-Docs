@@ -1,642 +1,858 @@
-# ECSR-API-Docs
-Swagger UI Documentation for ECSR.io API
-
-## Raw Docs:
-Swagger UI Site is Coming Soon!
-
-I will also improve these Raw Docs later on since the formatting kinda sucks.
-
-### Account Information
-getUserRobloxBadges GET
-https://ecsr.io/apisite/accountinformation/v1/users/2828/roblox-badges
-
-setUserDescription POST
-description: newDescription
-https://ecsr.io/apisite/accountinformation/v1/description
-
-### Account Settings
-getMyEmail GET
-https://ecsr.io/apisite/accountsettings/v1/email
-
-getInventoryPrivacy GET
-https://ecsr.io/apisite/accountsettings/v1/inventory-privacy
-
-setInventoryPrivacy POST
-inventoryPrivacy: newPrivacy
-https://ecsr.io/apisite/accountsettings/v1/inventory-privacy
-
-getTradePrivacy GET
-https://ecsr.io/apisite/accountsettings/v1/trade-privacy
-
-setTradePrivacy POST
-tradePrivacy: newPrivacy
-https://ecsr.io/apisite/accountsettings/v1/trade-privacy
-
-getTradeValue GET
-https://ecsr.io/apisite/accountsettings/v1/trade-value
-
-setTradeValue POST
-tradeValue: newValue
-https://ecsr.io/apisite/accountsettings/v1/trade-value
-
-### Ads
-uploadAdvertisement POST
-formData: {"name": name, "files": file}
-https://ecsr.io/apisite/ads/v1/user-ads/{Type}/create?assetId={targetId}
-
-getAds GET
-https://ecsr.io/apisite/ads/v1/user-ads/{creatorType: User, Group}/{creatorId}
-
-bidOnAd POST
-robux
-https://ecsr.io/apisite/ads/v1/user-ads/{adId}/run
-
-### API
-getAlert GET
-https://ecsr.io/apisite/api/alerts/alert-info
-
-### Auth
-login POST
-ctype: 'username'
-cvalue: username
-password
-https://ecsr.io/apisite/auth/v2/login
-
-logout POST
-https://ecsr.io/apisite/auth/v2/logout
-
-changePassword POST
-currentPassword: existingPassword
-newPassword
-https://ecsr.io/apisite/auth/v2/user/passwords/change
-
-validateUsername GET
-https://ecsr.io/apisite/auth/v1/usernames/validate?username={username}&context={context}
-
-changeUsername POST
-username
-password
-https://ecsr.io/apisite/auth/v1/username
-
-logoutFromAllOtherSessions POST
-https://ecsr.io/apisite/auth/v2/logoutfromallsessionsandreauthenticate
-
-### Avatar
-getRules GET
-https://ecsr.io/apisite/avatar/v1/avatar-rules
-
-getAvatar GET
-https://ecsr.io/apisite/avatar/v1/users/{userId}/avatar
-
-getMyAvatar GET
-https://ecsr.io/apisite/avatar/v1/avatar
-
-redrawMyAvatar POST
-https://ecsr.io/apisite/avatar/v1/avatar/redraw-thumbnail
-
-setWearingAssets POST
-assetIds
-https://ecsr.io/apisite/avatar/v1/avatar/v1/avatar/set-wearing-assets
-
-setColors POST
-bodyColors
-https://ecsr.io/apisite/avatar/v1/avatar/v1/avatar/set-body-colors
-
-getOutfits GET
-https://ecsr.io/apisite/avatar/v1/users/{userId}/outfits?itemsPerPage=50&page=1
-
-createOutfit POST
-name
-https://ecsr.io/apisite/avatar/v1/outfits/create
-
-wearOutfit POST
-https://ecsr.io/apisite/avatar/v1/outfits/{outfitId}/wear
-
-deleteOutfit POST
-https://ecsr.io/apisite/avatar/v1/outfits/{outfitId}/delete
-
-renameOutfit PATCH
-name
-https://ecsr.io/apisite/avatar/v1/outfits/{outfitId}
-
-### Catalog
-searchCatalog GET
-https://ecsr.io/apisite/catalog/v1/search/items?category={category}&limit={limit}&sortType={sort}
-optional: &cursor={cursor}, &keyword={keyword}, &subcategory={subcategory}, &creatorTargetId={creatorId}&&creatorType={creatorType}
-
-getProductInfoLegacy GET
-Note: This API is meant for server-side requests. It may be a hidden API.
-https://ecsr.io/apisite/api/marketplace/productinfo?assetId={assetId}
-
-getItemDetails POST
-itemType: 'Asset'
-id: v
-https://ecsr.io/apisite/catalog/v1/catalog/items/details
-
-getRecommendations GET
-https://ecsr.io/apisite/catalog/v1/recommendations/asset/{assetTypeId}?contextAssetId={assetId}&numItems={limit}
-
-getComments GET
-https://ecsr.io/comments/get-json?assetId={assetId}&startIndex={offset}&thumbnailWidth=100&thumbnailHeight=100&thumbnailFormat=PNG&cachebuster={Math.random}
-
-createComment POST
-text: comment
-assetId: assetId
-https://ecsr.io/comments/post
-
-addOrRemoveFromCollections POST
-assetId
-addToProfile
-https://ecsr.io/asset/toggle-profile
-
-deleteFromInventory POST
-assetId: assetId
-https://ecsr.io/apisite/inventory/v1/delete-from-inventory
-
-getIsFavorited GET
-https://ecsr.io/apisite/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite
-
-createFavorite POST
-https://ecsr.io/apisite/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite
-
-deleteFavorite DELETE
-https://ecsr.io/apisite/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite
-
-### Chat
-getChatSettings GET
-https://ecsr.io/apisite/chat/v2/chat-settings
-
-getUserConversations GET
-https://ecsr.io/apisite/chat/v2/get-user-conversations?pageNumber={pageNumber}&pageSize={pageSize}
-
-markAsRead POST
-conversationId
-endMessageId
-https://ecsr.io/apisite/chat/v2/mark-as-read
-
-startOneToOneConversation POST
-participantUserId: userId
-https://ecsr.io/apisite/chat/v2/start-one-to-one-conversation
-
-updateTypingStatus POST
-isTyping: isTyping
-conversationId
-https://ecsr.io/apisite/chat/v2/update-user-typing-status
-
-sendMessage POST
-conversationId
-message
-https://ecsr.io/apisite/chat/v2/send-message
-
-multiGetLatestMessages GET
-https://ecsr.io/apisite/chat/v2/multi-get-latest-messages?conversationIds={ids}
-
-getMessages GET
-https://ecsr.io/apisite/chat/v2/get-messages?conversationId={conversationId}&pageSize={pageSize}&exclusiveStartMessageId={exclusiveStartMessageId}
-
-### Develop
-uploadAsset POST
-name: name
-assetType: assetTypeId
-file: file
-optional: groupId: groupId
-https://ecsr.io/develop/upload
-
-uploadAssetVersion POST
-assetId: assetId
-file: file
-https://ecsr.io/develop/upload-version
-
-getCreatedAssetDetails POST
-assetIds
-https://ecsr.io/apisite/itemconfiguration/v1/creations/get-asset-details
-
-getCreatedItems GET
-https://ecsr.io/apisite/itemconfiguration/v1/creations/get-assets?assetType={assetType}&limit={limit}&cursor={cursor}
-optional: &groupId={groupId}
-
-updateAsset PATCH
-name
-description
-genres
-isCopyingAllowed
-enableComments
-https://ecsr.io/apisite/develop/v1/assets/{assetId}
-
-setAssetPrice POST
-priceInRobux or priceInTickets
-https://ecsr.io/apisite/itemconfiguration/v1/assets/{assetId}/update-price
-
-getAllGenres GET
-https://ecsr.io/apisite/develop/v1/assets/genres
-
-setUniverseMaxPlayers PATCH
-maxPlayers
-https://ecsr.io/apisite/develop/v1/universes/{universeId}/max-player-count
-
-### Economy
-getResellers GET
-https://ecsr.io/apisite/economy/v1/assets/assetId/resellers?limit={limit}&cursor={cursor}
-
-getRobux GET
-https://ecsr.io/apisite/economy/v1/users/{userId}/currency
-
-getRobuxGroup
-https://ecsr.io/apisite/economy/v1/groups/{groupId}/currency
-
-getResellableCopies GET
-https://ecsr.io/apisite/economy/v1/assets/{assetId}/users/{userId}/resellable-copies
-
-purchaseItem POST
-assetId
-expectedPrice: price
-expectedSellerId: sellerId
-userAssetId
-expectedCurrency
-https://ecsr.io/apisite/economy/v1/purchases/products/{productId}
-
-setResellableAssetPrice PATCH
-price
-https://ecsr.io/apisite/economy/v1/assets/{assetId}/resellable-copies/{userAssetId}
-
-getResaleData GET
-https://ecsr.io/apisite/economy/v1/assets/{assetId}/resale-data
-
-getTransactions GET
-https://ecsr.io/apisite/economy/v2/users/{userId}/transactions?cursor={cursor}&transactionType={type}
-
-getGroupTransactions GET
-https://ecsr.io/apisite/economy/v2/groups/{groupId}/transactions?cursor={cursor}&transactionType={type}
-
-getTransactionSummary GET
-https://ecsr.io/apisite/economy/v2/users/{userId}/transaction-totals?timeFrame={timePeriod}&transactionType=summary
-
-getGroupTransactionSummary GET
-https://ecsr.io/apisite/economy/v2/groups/{groupId}/transaction-totals?timeFrame={timePeriod}&transactionType=summary
-
-getMarketActivity GET
-https://ecsr.io/apisite/economy/v2/currency-exchange/market/activity
-
-createCurrencyExchangeOrder POST
-amount
-sourceCurrency: currency
-isMarketOrder
-desiredRate
-https://ecsr.io/apisite/economy/v2/currency-exchange/orders/create
-
-countOpenPositions GET
-Note: Get open position count for authenticated user
-https://ecsr.io/apisite/economy/v2/currency-exchange/orders/my/count?currency={currency}
-
-getOpenPositions GET
-https://ecsr.io/apisite/economy/v2/currency-exchange/orders/my?limit={limit}&startId={startId}&currency={currency}
-
-closePosition POST
-https://ecsr.io/apisite/economy/v2/currency-exchange/orders/{orderId}/close
-
-### Forums
-getPostsInSubcategory GET
-https://ecsr.io/apisite/forums/v1/sub-category/{subCategoryId}/posts?limit={limit}&cursor={cursor}
-
-getRepliesToThread 
-https://ecsr.io/apisite/forums/v1/threads/{threadId}/replies?limit={limit}&cursor={cursor}
-
-getThreadInfoById GET
-https://ecsr.io/apisite/forums/v1/threads/{threadId}/info
-
-getPostById GET
-https://ecsr.io/apisite/forums/v1/posts/{postId}/info
-
-markAsRead POST
-https://ecsr.io/apisite/forums/v1/posts/{postId}/mark-as-read
-
-createThread POST
-post
-subject
-https://ecsr.io/apisite/forums/v1/sub-category/{subCategoryId}/thread
-
-replyToPost POST
-post
-https://ecsr.io/apisite/forums/v1/posts/{postId}/reply
-
-getSubCategoryInfo GET
-https://ecsr.io/apisite/forums/v1/sub-category/{subCategoryId}/info
-
-deletePost DELETE
-https://ecsr.io/apisite/forums/v1/posts/{postId}
-
-getPostsByUser GET
-https://ecsr.io/apisite/forums/v1/users/{userId}/posts?limit={limit}&cursor={offset}
-
-### Friends
-getFriends GET
-https://ecsr.io/apisite/friends/v1/user/friend-requests/count
-
-getFollowersCount GET
-https://ecsr.io/apisite/friends/v1/users/{userId}/followers/count
-
-getFollowers GET
-https://ecsr.io/apisite/friends/v1/users/{userId}/followers?cursor={cursor}&sort={sort}&limit={limit}
-
-getFollowingsCount GET
-https://ecsr.io/apisite/friends/v1/users/{userId}/followings/count
-
-getFollowings GET
-https://ecsr.io/apisite/friends/v1/users/{userId}/followings?cursor={cursor}&sort={sort}&limit={limit}
-
-getFriendStatus GET
-https://ecsr.io/apisite/friends/v1/users/{authenticatedUserId}/friends/statuses?userIds={userId}
-
-getFriendRequests GET
-https://ecsr.io/apisite/friends/v1/my/friends/requests?limit={limit}&cursor={cursor}
-
-unfriendUser POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/unfriend
-
-acceptFriendRequest POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/accept-friend-request
-
-declineFriendRequest POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/decline-friend-request
-
-sendFriendRequest POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/request-friendship
-
-followUser POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/follow
-
-unfollowUser POST
-https://ecsr.io/apisite/friends/v1/users/{userId}/unfollow
-
-getFollowingStatus POST
-targetUserIds: userIds
-https://ecsr.io/apisite/friends/v1/user/following-exists
-
-### Games
-getUserGames GET
-https://ecsr.io/apisite/games/v2/users/{userId}/games?cursor={cursor}
-
-getGroupGames GET
-https://ecsr.io/apisite/games/v2/groups/{groupId}/games?cursor={cursor}
-
-getGameSorts GET
-https://ecsr.io/apisite/games/v1/games/sorts?gameSortsContext={gameSortsContext}
-
-getGameList GET
-https://ecsr.io/apisite/games/v1/games/list?sortToken={sortToken}&maxRows={limit}&genre={genre}&keyword={keyword}
-
-getGameMedia GET
-https://ecsr.io/apisite/games/v2/games/{universeId}/media
-
-launchGame GET
-https://ecsr.io/game/get-join-script?placeId={placeId}
-
-multiGetPlaceDetails GET
-https://ecsr.io/apisite/games/v1/games/multiget-place-details?placeIds={placeIds}
-
-multiGetUniverseDetails GET
-https://ecsr.io/apisite/games/v1/games?universeIds={universeIds}
-
-getServers GET
-https://ecsr.io/games/getgameinstancesjson?placeId={placeId}&startIndex={offset}
-
-multiGetGameVotes GET
-https://ecsr.io/apisite/games/v1/games/votes?universeIds={universeIds}
-
-voteOnGame PATCH
-vote: isUpvote
-https://ecsr.io/apisite/games/v1/games/{universeId}/user-votes
-
-### Groups
-getUserGroups GET
-https://ecsr.io/apisite/groups/v1/users/{userId}/groups/roles
-
-getPermissionsForRoleset GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/roles/{rolesetId}/permissions
-
-joinGroup POST
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/users
-
-leaveGroup DELETE
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/users/{userId}
-
-setStatus PATCH
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/status
-
-createGroup POST
-name: name
-description: description
-icon: file
-https://ecsr.io/apisite/groups/v1/groups/create
-
-getRoles GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/roles
-
-getMembers GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/users?cursor={cursor}&limit=${limit}&sortOrder=${sortOrder}
-
-getRolesetMembers GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/roles/{roleSetId}/users?cursor={cursor}&limit={limit}&sortOrder={sortOrder}
-
-getWall GET
-https://ecsr.io/apisite/groups/v2/groups/{groupId}/wall/posts?sortOrder={sort}&limit={limit}&cursor={cursor}
-
-postToWall POST
-body: content
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/wall/posts
-
-deletePost DELETE
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/wall/posts/{postId}
-
-getInfo GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}
-
-claimGroupOwnership POST
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/claim-ownership
-
-setGroupAsPrimary POST
-groupId
-https://ecsr.io/apisite/groups/v1/groups/v1/user/groups/primary
-
-removePrimaryGroup DELETE
-https://ecsr.io/apisite/groups/v1/user/groups/primary
-
-getPrimaryGroup GET
-https://ecsr.io/apisite/groups/v1/users/{userId}/groups/primary/role
-
-setUserRole PATCH
-roleId: roleId
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/users/{userId}
-
-setGroupIcon PATCH
-file: icon
-https://ecsr.io/apisite/groups/v1/groups/icon?groupId={groupId}
-
-setGroupDescription PATCH
-description
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/description
-
-getGroupSettings GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/settings
-
-setGroupSettings PATCH
-isApprovalRequired
-areEnemiesAllowed
-areGroupFundsVisible
-areGroupGamesVisible
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/settings
-
-changeGroupOwner PATCH
-userId
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/change-owner
-
-createRole POST
-name
-description
-rank
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/rolesets/create
-
-editRole PATCH
-name
-description
-rank
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/rolesets
-
-deleteRole DELETE
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/rolesets
-
-setRolePermissions PATCH
-permissions: permissions
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/roles/{roleId}/permissions
-
-oneTimePayout POST
-PayoutType: 'FixedAmount
-Recipients: [{recipientId: userId, recipientType: 'User', amount, }]
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/payouts
-
-getGroupInfo GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}
-
-getGroupAuditLog GET
-https://ecsr.io/apisite/groups/v1/groups/{groupId}/audit-log?cursor={cursor}&action={action}&userId={userId}&sortOrder=desc&limit=100
-
-### Inventory
-getOwnedCopies GET
-https://ecsr.io/apisite/inventory/v1/users/{userId}/items/Asset/{assetId}
-
-getInventory GET
-https://ecsr.io/inventory/list-json?userId={userId}&assetTypeId={assetTypeId}&cursor={cursor}&itemsPerPage={limit}
-
-getFavorites GET
-https://ecsr.io/users/favorites/list-json?userId={userId}&assetTypeId={assetTypeId}&pageNumber={cursor}&itemsPerPage={limit}
-
-getCollections GET
-https://ecsr.io/users/profile/robloxcollections-json?userId={userId}
-
-getCollectibleInventory GET
-https://ecsr.io/apisite/inventory/v1/users/{userId}/assets/collectibles?cursor={cursor}&limit={limit}&assetType={assetTypeId}
-
-getCollectibleOwners GET
-https://ecsr.io/apisite/inventory/v2/assets/{assetId}/owners?cursor={cursor}&limit={limit}&sortOrder={sort}
-
-### Presence
-multiGetPresence POST
-userIds
-https://ecsr.io/apisite/presence/v1/presence/users
-
-### Private Messages
-sendMessage POST
-recipientid: userId
-body
-subject
-replyMessageId
-includePreviousMessage
-https://ecsr.io/apisite/privatemessages/v1/messages/send
-
-getAnnouncements GET
-https://ecsr.io/apisite/privatemessages/v1/announcements
-
-getMessages GET
-https://ecsr.io/apisite/privatemessages/v1/messages?messageTab={tab}&pageSize={limit}&pageNumber={offset/limit}
-
-toggleReadStatus POST
-messageIds
-https://ecsr.io/apisite/privatemessages/v1/messages/{isRead: mark-read/mark-unread}
-
-toggleArchiveStatus POST
-messageIds
-https://ecsr.io/apisite/privatemessages/v1/messages/{isArchived: archive/unarchive}
-
-getUnreadMessageCount GET
-https://ecsr.io/apisite/privatemessages/v1/messages/unread/count
-
-### Thumbnails
-multiGetUserThumbnails GET
-https://ecsr.io/apisite/thumbnails/v1/users/avatar?userIds={userIds}&size={size}&format={format}
-
-multiGetUserHeadshots GET
-https://ecsr.io/apisite/thumbnails/v1/users/avatar-headshot?userIds={pending}&size={size}&format={format}
-
-multiGetOutfitThumbnails GET
-https://ecsr.io/apisite/thumbnails/v1/users/outfits?userOutfitIds={userOutfitIds}&size={size}&format={format}
-
-multiGetGroupIcons GET
-https://ecsr.io/apisite/thumbnails/v1/groups/icons?groupIds={groupIds}&format=png&size=420x420
-
-multiGetAssetThumbnails GET
-https://ecsr.io/apisite/thumbnails/v1/assets?assetIds={assetIds}&format=png&size=420x420
-
-multiGetUniverseIcons GET
-https://ecsr.io/apisite/thumbnails/v1/games/icons?size={size}&format=png&universeIds={item}
-
-### Trades
-
-getMyTrades GET
-https://ecsr.io/apisite/trades/v1/trades/{tradeType}?cursor={cursor}
-
-getTradeDetails GET
-https://ecsr.io/apisite/trades/v1/trades/{tradeId}
-
-acceptTrade POST
-https://ecsr.io/apisite/trades/v1/trades/{tradeId}/accept
-
-declineTrade POST
-https://ecsr.io/apisite/trades/v1/trades/{tradeId}/decline
-
-getInboundTradeCount GET
-https://ecsr.io/apisite/trades/v1/trades/inbound/count
-
-createTrade POST
-offers: [{robux: offerRobux, userAssetIds: offerUserAssets, userId: offerUserId,}, {robux: requestRobux, userAssetIds: requestUserAssets, userId: requestUserId,}]
-https://ecsr.io/apisite/trades/v1/trades/send
-
-counterTrade POST
-offers: [{robux: offerRobux, userAssetIds: offerUserAssets, userId: offerUserId,}, {robux: requestRobux, userAssetIds: requestUserAssets, userId: requestUserId,}]
-https://ecsr.io/apisite/trades/v1/trades/counter
-
-### Users
-getMyInfo GET
-https://ecsr.io/apisite/users/v1/users/authenticated
-
-getUserInfo GET
-https://ecsr.io/apisite/users/v1/users/{userId}
-
-getUserStatus GET
-https://ecsr.io/apisite/users/v1/users/{userId}/status
-
-updateStatus PATCH
-status: newStatus
-https://ecsr.io/apisite/users/v1/users/{userId}/status
-
-getPreviousUsernames GET
-https://ecsr.io/apisite/users/v1/users/{userId}/username-history?limit=100&cursor={cursor}
-
-searchUsers GET
-https://ecsr.io/apisite/users/results?keyword={keyword}&maxRows={limit}&startIndex={offset}
-
-getMembershipType GET
-https://ecsr.io/apisite/premiumfeatures/v1/users/{userId}/validate-membership
-
-getUserIdByUsername POST
-usernames: username
-https://ecsr.io/apisite/users/v1/usernames/users
+# ECSR:R Unofficial API Documentation
+**Unofficial Swagger UI Documentation for the ECSR.io API**
+
+[Live Demo & Swagger UI](https://ecsr-api-docs.vercel.app/)
+
+> ⚠️ **Usage Notice**  
+> • Do **not** use these endpoints for malicious activities.  
+> • Ensure any application you build complies with ECSR’s Terms of Service.  
+>
+> 🔒 **Private Testing (Coming Soon)**  
+> You will soon be able to provide a `.ROBLOSECURITY` cookie at the top of the site to fully test authenticated endpoints.
+
+---
+## Inventory
+
+#### GET `/inventory/v1/users/{userId}/items/Asset/{assetId}`
+- **OperationId**: `getOwnedCopies`
+
+#### GET `/inventory/list-json?userId={userId}&assetTypeId={assetTypeId}`
+- **OperationId**: `getInventory`
+- **Optional**: `cursor`, `itemsPerPage`
+
+#### GET `/users/favorites/list-json?userId={userId}&assetTypeId={assetTypeId}`
+- **OperationId**: `getFavorites`
+- **Optional**: `pageNumber`, `itemsPerPage`
+
+#### GET `/users/profile/robloxcollections-json?userId={userId}`
+- **OperationId**: `getCollections`
+
+#### GET `/inventory/v1/users/{userId}/assets/collectibles?cursor={cursor}&limit={limit}`
+- **OperationId**: `getCollectibleInventory`
+
+#### GET `/inventory/v2/assets/{assetId}/owners?cursor={cursor}&limit={limit}`
+- **OperationId**: `getCollectibleOwners`
+
+---
+## Account Information
+
+#### GET `/accountinformation/v1/users/{userId}/roblox-badges`
+- **OperationId**: `getUserRobloxBadges`
+- **Path Parameter**: `userId` (string)
+
+#### POST `/accountinformation/v1/description`
+- **OperationId**: `setUserDescription`
+- **Body**:
+  ```json
+  { "description": "<newDescription>" }
+  ```
+
+---
+## Account Settings
+
+#### GET `/accountsettings/v1/email`
+- **OperationId**: `getMyEmail`
+
+#### GET `/accountsettings/v1/inventory-privacy`
+- **OperationId**: `getInventoryPrivacy`
+
+#### POST `/accountsettings/v1/inventory-privacy`
+- **OperationId**: `setInventoryPrivacy`
+- **Body**:
+  ```json
+  { "inventoryPrivacy": "<newPrivacy>" }
+  ```
+
+#### GET `/accountsettings/v1/trade-privacy`
+- **OperationId**: `getTradePrivacy`
+
+#### POST `/accountsettings/v1/trade-privacy`
+- **OperationId**: `setTradePrivacy`
+- **Body**:
+  ```json
+  { "tradePrivacy": "<newPrivacy>" }
+  ```
+
+#### GET `/accountsettings/v1/trade-value`
+- **OperationId**: `getTradeValue`
+
+#### POST `/accountsettings/v1/trade-value`
+- **OperationId**: `setTradeValue`
+- **Body**:
+  ```json
+  { "tradeValue": <newValue> }
+  ```
+
+---
+## Ads
+
+#### POST `/ads/v1/user-ads/{Type}/create?assetId={assetId}`
+- **OperationId**: `uploadAdvertisement`
+- **Path Parameter**: `Type` (string)
+- **Query Parameter**: `assetId` (string)
+- **Form Data**: `name` (string), `files` (file)
+
+#### GET `/ads/v1/user-ads/{creatorType}/{creatorId}`
+- **OperationId**: `getAds`
+- **Path Parameters**: `creatorType` (User | Group), `creatorId` (string)
+
+#### POST `/ads/v1/user-ads/{adId}/run`
+- **OperationId**: `bidOnAd`
+- **Path Parameter**: `adId` (string)
+- **Body**:
+  ```json
+  { "robux": <number> }
+  ```
+
+---
+## API
+
+#### GET `/api/alerts/alert-info`
+- **OperationId**: `getAlert`
+
+---
+## Auth
+
+#### POST `/auth/v2/login`
+- **OperationId**: `login`
+- **Form Data**: 
+  - `ctype`: "username"
+  - `cvalue`: `<username>`
+  - `password`: `<password>`
+
+#### POST `/auth/v2/logout`
+- **OperationId**: `logout`
+
+#### POST `/auth/v2/user/passwords/change`
+- **OperationId**: `changePassword`
+- **Form Data**:
+  - `currentPassword`: `<existingPassword>`
+  - `newPassword`: `<newPassword>`
+
+#### GET `/auth/v1/usernames/validate?username={username}&context={context}`
+- **OperationId**: `validateUsername`
+
+#### POST `/auth/v1/username`
+- **OperationId**: `changeUsername`
+- **Form Data**:
+  - `username`: `<newUsername>`
+  - `password`: `<password>`
+
+#### POST `/auth/v2/logoutfromallsessionsandreauthenticate`
+- **OperationId**: `logoutFromAllOtherSessions`
+
+---
+## Avatar
+
+#### GET `/avatar/v1/avatar-rules`
+- **OperationId**: `getRules`
+
+#### GET `/avatar/v1/users/{userId}/avatar`
+- **OperationId**: `getAvatar`
+- **Path Parameter**: `userId` (string)
+
+#### GET `/avatar/v1/avatar`
+- **OperationId**: `getMyAvatar`
+
+#### POST `/avatar/v1/avatar/redraw-thumbnail`
+- **OperationId**: `redrawMyAvatar`
+
+#### POST `/avatar/v1/avatar/v1/avatar/set-wearing-assets`
+- **OperationId**: `setWearingAssets`
+- **Body**:
+  ```json
+  { "assetIds": ["<id1>", "<id2>"] }
+  ```
+
+#### POST `/avatar/v1/avatar/v1/avatar/set-body-colors`
+- **OperationId**: `setColors`
+- **Body**:
+  ```json
+  { "bodyColors": { /* color map */ } }
+  ```
+
+#### GET `/avatar/v1/users/{userId}/outfits?itemsPerPage=50&page=1`
+- **OperationId**: `getOutfits`
+
+#### POST `/avatar/v1/outfits/create`
+- **OperationId**: `createOutfit`
+- **Form Data**: `name`: `<outfitName>`
+
+#### POST `/avatar/v1/outfits/{outfitId}/wear`
+- **OperationId**: `wearOutfit`
+
+#### POST `/avatar/v1/outfits/{outfitId}/delete`
+- **OperationId**: `deleteOutfit`
+
+#### PATCH `/avatar/v1/outfits/{outfitId}`
+- **OperationId**: `renameOutfit`
+- **Body**:
+  ```json
+  { "name": "<newName>" }
+  ```
+
+---
+## Catalog
+
+#### GET `/catalog/v1/search/items?category={category}&limit={limit}&sortType={sortType}`
+- **OperationId**: `searchCatalog`
+- **Optional Query**: `cursor`, `keyword`, `subcategory`, `creatorTargetId`, `creatorType`
+
+#### GET `/api/marketplace/productinfo?assetId={assetId}`
+- **OperationId**: `getProductInfoLegacy`
+- **Note**: Hidden server‑side API
+
+#### POST `/catalog/v1/catalog/items/details`
+- **OperationId**: `getItemDetails`
+- **Body**:
+  ```json
+  { "itemType": "Asset", "id": "<id>" }
+  ```
+
+#### GET `/catalog/v1/recommendations/asset/{assetTypeId}?contextAssetId={assetId}&numItems={limit}`
+- **OperationId**: `getRecommendations`
+
+#### GET `/comments/get-json?assetId={assetId}&startIndex={offset}`
+- **OperationId**: `getComments`
+- **Defaults**: `thumbnailWidth=100`, `thumbnailHeight=100`, `thumbnailFormat=PNG`
+
+#### POST `/comments/post`
+- **OperationId**: `createComment`
+- **Body**:
+  ```json
+  { "text": "<comment>", "assetId": "<assetId>" }
+  ```
+
+#### POST `/asset/toggle-profile`
+- **OperationId**: `addOrRemoveFromCollections`
+- **Body**:
+  ```json
+  { "assetId": "<assetId>", "addToProfile": <true|false> }
+  ```
+
+#### POST `/inventory/v1/delete-from-inventory`
+- **OperationId**: `deleteFromInventory`
+- **Body**:
+  ```json
+  { "assetId": "<assetId>" }
+  ```
+
+#### GET `/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite`
+- **OperationId**: `getIsFavorited`
+
+#### POST `/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite`
+- **OperationId**: `createFavorite`
+
+#### DELETE `/catalog/v1/favorites/users/{userId}/assets/{assetId}/favorite`
+- **OperationId**: `deleteFavorite`
+
+---
+## Chat
+
+#### GET `/chat/v2/chat-settings`
+- **OperationId**: `getChatSettings`
+
+#### GET `/chat/v2/get-user-conversations?pageNumber={pageNumber}&pageSize={pageSize}`
+- **OperationId**: `getUserConversations`
+
+#### POST `/chat/v2/mark-as-read`
+- **OperationId**: `markAsRead`
+- **Body**:
+  ```json
+  { "conversationId": "<id>", "endMessageId": "<id>" }
+  ```
+
+#### POST `/chat/v2/start-one-to-one-conversation`
+- **OperationId**: `startOneToOneConversation`
+- **Body**:
+  ```json
+  { "participantUserId": "<userId>" }
+  ```
+
+#### POST `/chat/v2/update-user-typing-status`
+- **OperationId**: `updateTypingStatus`
+- **Body**:
+  ```json
+  { "isTyping": <boolean>, "conversationId": "<id>" }
+  ```
+
+#### POST `/chat/v2/send-message`
+- **OperationId**: `sendMessage`
+- **Body**:
+  ```json
+  { "conversationId": "<id>", "message": "<text>" }
+  ```
+
+#### GET `/chat/v2/multi-get-latest-messages?conversationIds={ids}`
+- **OperationId**: `multiGetLatestMessages`
+
+#### GET `/chat/v2/get-messages?conversationId={conversationId}&pageSize={pageSize}`
+- **OperationId**: `getMessages`
+
+---
+## Develop
+
+#### POST `/develop/upload`
+- **OperationId**: `uploadAsset`
+- **Form Data**: 
+  - `name` (string)  
+  - `assetType` (string)  
+  - `groupId` (string, optional)  
+  - `file` (file)
+
+#### POST `/develop/upload-version`
+- **OperationId**: `uploadAssetVersion`
+- **Body**:
+  ```json
+  { "assetId": "<assetId>" }
+  ```
+- **Form Data**: `file`
+
+#### POST `/itemconfiguration/v1/creations/get-asset-details`
+- **OperationId**: `getCreatedAssetDetails`
+- **Body**:
+  ```json
+  { "assetIds": ["<id1>", "<id2>"] }
+  ```
+
+#### GET `/itemconfiguration/v1/creations/get-assets?assetType={assetType}&limit={limit}`
+- **OperationId**: `getCreatedItems`
+- **Query**: `assetType`, `limit`, `cursor` (optional), `groupId` (optional)
+
+#### PATCH `/develop/v1/assets/{assetId}`
+- **OperationId**: `updateAsset`
+- **Body**: any of:
+  ```json
+  {
+    "name": "<string>",
+    "description": "<string>",
+    "genres": ["<genre1>","<genre2>"],
+    "isCopyingAllowed": <boolean>,
+    "enableComments": <boolean>
+  }
+  ```
+
+#### POST `/itemconfiguration/v1/assets/{assetId}/update-price`
+- **OperationId**: `setAssetPrice`
+- **Body**:
+  ```json
+  { "priceInRobux": <int>, "priceInTickets": <int> }
+  ```
+
+#### GET `/develop/v1/assets/genres`
+- **OperationId**: `getAllGenres`
+
+#### PATCH `/develop/v1/universes/{universeId}/max-player-count`
+- **OperationId**: `setUniverseMaxPlayers`
+- **Body**:
+  ```json
+  { "maxPlayers": <int> }
+  ```
+
+---
+## Economy
+
+#### GET `/economy/v1/assets/{assetId}/resellers?limit={limit}`
+- **OperationId**: `getResellers`
+
+#### GET `/economy/v1/users/{userId}/currency`
+- **OperationId**: `getRobux`
+
+#### GET `/economy/v1/groups/{groupId}/currency`
+- **OperationId**: `getRobuxGroup`
+
+#### GET `/economy/v1/assets/{assetId}/users/{userId}/resellable-copies`
+- **OperationId**: `getResellableCopies`
+
+#### POST `/economy/v1/purchases/products/{productId}`
+- **OperationId**: `purchaseItem`
+- **Body**:
+  ```json
+  {
+    "assetId":"<string>",
+    "expectedPrice":<number>,
+    "expectedSellerId":"<string>",
+    "userAssetId":"<string>",
+    "expectedCurrency":"<string>"
+  }
+  ```
+
+#### PATCH `/economy/v1/assets/{assetId}/resellable-copies/{userAssetId}`
+- **OperationId**: `setResellableAssetPrice`
+- **Body**:
+  ```json
+  { "price": <number> }
+  ```
+
+#### GET `/economy/v1/assets/{assetId}/resale-data`
+- **OperationId**: `getResaleData`
+
+#### GET `/economy/v2/users/{userId}/transactions` (optional `?cursor=…&transactionType=…`)
+- **OperationId**: `getTransactions`
+
+#### GET `/economy/v2/groups/{groupId}/transactions` (optional `?cursor=…&transactionType=…`)
+- **OperationId**: `getGroupTransactions`
+
+#### GET `/economy/v2/users/{userId}/transaction-totals?timeFrame={timeFrame}`
+- **OperationId**: `getTransactionSummary`
+
+#### GET `/economy/v2/groups/{groupId}/transaction-totals?timeFrame={timeFrame}`
+- **OperationId**: `getGroupTransactionSummary`
+
+#### GET `/economy/v2/currency-exchange/market/activity`
+- **OperationId**: `getMarketActivity`
+
+#### POST `/economy/v2/currency-exchange/orders/create`
+- **OperationId**: `createCurrencyExchangeOrder`
+- **Body**:
+  ```json
+  { "amount":<number>, "sourceCurrency":"<string>", "isMarketOrder":<boolean>, "desiredRate":<number> }
+  ```
+
+#### GET `/economy/v2/currency-exchange/orders/my/count?currency={currency}`
+- **OperationId**: `countOpenPositions`
+
+#### GET `/economy/v2/currency-exchange/orders/my` (optional `?limit=…&startId=…&currency=…`)
+- **OperationId**: `getOpenPositions`
+
+#### POST `/economy/v2/currency-exchange/orders/{orderId}/close`
+- **OperationId**: `closePosition`
+
+---
+## Forums
+
+#### GET `/forums/v1/sub-category/{subCategoryId}/posts?limit={limit}`
+- **OperationId**: `getPostsInSubcategory`
+
+#### GET `/forums/v1/threads/{threadId}/replies?limit={limit}`
+- **OperationId**: `getRepliesToThread`
+
+#### GET `/forums/v1/threads/{threadId}/info`
+- **OperationId**: `getThreadInfoById`
+
+#### GET `/forums/v1/posts/{postId}/info`
+- **OperationId**: `getPostById`
+
+#### POST `/forums/v1/posts/{postId}/mark-as-read`
+- **OperationId**: `markAsReadForum`
+
+#### POST `/forums/v1/sub-category/{subCategoryId}/thread`
+- **OperationId**: `createThread`
+- **Body**:
+  ```json
+  { "subject":"<string>", "post":"<string>" }
+  ```
+
+#### POST `/forums/v1/posts/{postId}/reply`
+- **OperationId**: `replyToPost`
+- **Body**:
+  ```json
+  { "post":"<string>" }
+  ```
+
+#### GET `/forums/v1/sub-category/{subCategoryId}/info`
+- **OperationId**: `getSubCategoryInfo`
+
+#### DELETE `/forums/v1/posts/{postId}`
+- **OperationId**: `deletePostForum`
+
+#### GET `/forums/v1/users/{userId}/posts?limit={limit}`
+- **OperationId**: `getPostsByUser`
+
+---
+## Friends
+
+#### GET `/friends/v1/user/friend-requests/count`
+- **OperationId**: `getFriends`
+
+#### GET `/friends/v1/users/{userId}/followers/count`
+- **OperationId**: `getFollowersCount`
+
+#### GET `/friends/v1/users/{userId}/followers` (optional `?cursor=…&sort=…&limit=…`)
+- **OperationId**: `getFollowers`
+
+#### GET `/friends/v1/users/{userId}/followings/count`
+- **OperationId**: `getFollowingsCount`
+
+#### GET `/friends/v1/users/{userId}/followings` (optional `?cursor=…&sort=…&limit=…`)
+- **OperationId**: `getFollowings`
+
+#### GET `/friends/v1/users/{authenticatedUserId}/friends/statuses?userIds={userIds}`
+- **OperationId**: `getFriendStatus`
+
+#### GET `/friends/v1/my/friends/requests?limit={limit}`
+- **OperationId**: `getFriendRequests`
+
+#### POST `/friends/v1/users/{userId}/unfriend`
+- **OperationId**: `unfriendUser`
+
+#### POST `/friends/v1/users/{userId}/accept-friend-request`
+- **OperationId**: `acceptFriendRequest`
+
+#### POST `/friends/v1/users/{userId}/decline-friend-request`
+- **OperationId**: `declineFriendRequest`
+
+#### POST `/friends/v1/users/{userId}/request-friendship`
+- **OperationId**: `sendFriendRequest`
+
+#### POST `/friends/v1/users/{userId}/follow`
+- **OperationId**: `followUser`
+
+#### POST `/friends/v1/users/{userId}/unfollow`
+- **OperationId**: `unfollowUser`
+
+#### POST `/friends/v1/user/following-exists`
+- **OperationId**: `getFollowingStatus`
+- **Body**:
+  ```json
+  { "targetUserIds": ["<id1>", "<id2>"] }
+  ```
+
+---
+## Games
+
+#### GET `/games/v2/users/{userId}/games` (optional `?cursor=…`)
+- **OperationId**: `getUserGames`
+
+#### GET `/games/v2/groups/{groupId}/games` (optional `?cursor=…`)
+- **OperationId**: `getGroupGames`
+
+#### GET `/games/v1/games/sorts?gameSortsContext={context}`
+- **OperationId**: `getGameSorts`
+
+#### GET `/games/v1/games/list?sortToken={sortToken}&maxRows={limit}`
+- **OperationId**: `getGameList`
+- **Optional**: `genre`, `keyword`
+
+#### GET `/games/v2/games/{universeId}/media`
+- **OperationId**: `getGameMedia`
+
+#### GET `/game/get-join-script?placeId={placeId}`
+- **OperationId**: `launchGame`
+
+#### GET `/games/v1/games/multiget-place-details?placeIds={placeIds}`
+- **OperationId**: `multiGetPlaceDetails`
+
+#### GET `/games/v1/games?universeIds={universeIds}`
+- **OperationId**: `multiGetUniverseDetails`
+
+#### GET `/games/getgameinstancesjson?placeId={placeId}` (optional `&startIndex=…`)
+- **OperationId**: `getServers`
+
+#### GET `/games/v1/games/votes?universeIds={universeIds}`
+- **OperationId**: `multiGetGameVotes`
+
+#### PATCH `/games/v1/games/{universeId}/user-votes`
+- **OperationId**: `voteOnGame`
+- **Body**:
+  ```json
+  { "vote": <true|false> }
+  ```
+
+---
+## Groups
+
+#### GET `/groups/v1/users/{userId}/groups/roles`
+- **OperationId**: `getUserGroups`
+
+#### GET `/groups/v1/groups/{groupId}/roles/{rolesetId}/permissions`
+- **OperationId**: `getPermissionsForRoleset`
+
+#### POST `/groups/v1/groups/{groupId}/users`
+- **OperationId**: `joinGroup`
+
+#### DELETE `/groups/v1/groups/{groupId}/users/{userId}`
+- **OperationId**: `leaveGroup`
+
+#### PATCH `/groups/v1/groups/{groupId}/status`
+- **OperationId**: `setStatus`
+
+#### POST `/groups/v1/groups/create`
+- **OperationId**: `createGroup`
+- **Form Data**:
+  - `name`, `description`, `icon`
+
+#### GET `/groups/v1/groups/{groupId}/roles`
+- **OperationId**: `getRoles`
+
+#### GET `/groups/v1/groups/{groupId}/users` (optional `?cursor=…&limit=…&sortOrder=…`)
+- **OperationId**: `getMembers`
+
+#### GET `/groups/v1/groups/{groupId}/roles/{rolesetId}/users` (optional `?cursor=…&limit=…&sortOrder=…`)
+- **OperationId**: `getRolesetMembers`
+
+#### GET `/groups/v2/groups/{groupId}/wall/posts` (optional `?sortOrder=…&limit=…&cursor=…`)
+- **OperationId**: `getWall`
+
+#### POST `/groups/v1/groups/{groupId}/wall/posts`
+- **OperationId**: `postToWall`
+- **Body**:
+  ```json
+  { "content":"<string>" }
+  ```
+
+#### DELETE `/groups/v1/groups/{groupId}/wall/posts/{postId}`
+- **OperationId**: `deleteWallPost`
+
+#### GET `/groups/v1/groups/{groupId}`
+- **OperationId**: `getGroupInfo`
+
+#### POST `/groups/v1/groups/{groupId}/claim-ownership`
+- **OperationId**: `claimGroupOwnership`
+
+#### POST `/groups/v1/groups/v1/user/groups/primary?groupId={groupId}`
+- **OperationId**: `setGroupAsPrimary`
+
+#### DELETE `/groups/v1/user/groups/primary`
+- **OperationId**: `removePrimaryGroup`
+
+#### GET `/groups/v1/users/{userId}/groups/primary/role`
+- **OperationId**: `getPrimaryGroup`
+
+#### PATCH `/groups/v1/groups/icon?groupId={groupId}`
+- **OperationId**: `setGroupIcon`
+- **Form Data**: `icon`
+
+#### PATCH `/groups/v1/groups/{groupId}/description`
+- **OperationId**: `setGroupDescription`
+- **Body**:
+  ```json
+  { "description":"<string>" }
+  ```
+
+#### GET `/groups/v1/groups/{groupId}/settings`
+- **OperationId**: `getGroupSettings`
+
+#### PATCH `/groups/v1/groups/{groupId}/settings`
+- **OperationId**: `setGroupSettings`
+- **Body**:
+  ```json
+  { "isApprovalRequired":<boolean>, "areEnemiesAllowed":<boolean>, "areGroupFundsVisible":<boolean>, "areGroupGamesVisible":<boolean> }
+  ```
+
+#### PATCH `/groups/v1/groups/{groupId}/change-owner`
+- **OperationId**: `changeGroupOwner`
+- **Body**:
+  ```json
+  { "userId":"<string>" }
+  ```
+
+#### POST `/groups/v1/groups/{groupId}/rolesets/create`
+- **OperationId**: `createRole`
+- **Body**:
+  ```json
+  { "name":"<string>", "description":"<string>", "rank":<int> }
+  ```
+
+#### PATCH `/groups/v1/groups/{groupId}/rolesets`
+- **OperationId**: `editRole`
+- **Body**:
+  ```json
+  { "name":"<string>", "description":"<string>", "rank":<int> }
+  ```
+
+#### DELETE `/groups/v1/groups/{groupId}/rolesets`
+- **OperationId**: `deleteRole`
+
+#### PATCH `/groups/v1/groups/{groupId}/roles/{roleId}/permissions`
+- **OperationId**: `setRolePermissions`
+- **Body**:
+  ```json
+  { "permissions":["<perm1>","<perm2>"] }
+  ```
+
+#### POST `/groups/v1/groups/{groupId}/payouts`
+- **OperationId**: `oneTimePayout`
+- **Body**:
+  ```json
+  { "PayoutType":"<string>", "Recipients":[{ "recipientId":"<id>", "recipientType":"<type>", "amount":<number> }] }
+  ```
+
+#### GET `/groups/v1/groups/{groupId}/audit-log` (optional `?cursor=…&action=…&userId=…&sortOrder=desc&limit=100`)
+- **OperationId**: `getGroupAuditLog`
+
+---
+## Inventory
+
+#### GET `/inventory/v1/users/{userId}/items/Asset/{assetId}`
+- **OperationId**: `getOwnedCopies`
+
+#### GET `/inventory/list-json?userId={userId}&assetTypeId={assetTypeId}`
+- **OperationId**: `getInventory`
+- **Optional**: `cursor`, `itemsPerPage`
+
+#### GET `/users/favorites/list-json?userId={userId}&assetTypeId={assetTypeId}`
+- **OperationId**: `getFavorites`
+- **Optional**: `pageNumber`, `itemsPerPage`
+
+#### GET `/users/profile/robloxcollections-json?userId={userId}`
+- **OperationId**: `getCollections`
+
+#### GET `/inventory/v1/users/{userId}/assets/collectibles?cursor={cursor}&limit={limit}`
+- **OperationId**: `getCollectibleInventory`
+
+#### GET `/inventory/v2/assets/{assetId}/owners?cursor={cursor}&limit={limit}`
+- **OperationId**: `getCollectibleOwners`
+
+---
+## Presence
+
+#### POST `/presence/v1/presence/users`
+- **OperationId**: `multiGetPresence`
+- **Body**:
+  ```json
+  { "userIds":["<id1>","<id2>"] }
+  ```
+
+---
+## Private Messages
+
+#### POST `/privatemessages/v1/messages/send`
+- **OperationId**: `sendPrivateMessage`
+- **Body**:
+  ```json
+  { "recipientid":"<userId>", "body":"<text>", "subject":"<string>", "replyMessageId":"<id>", "includePreviousMessage":<boolean> }
+  ```
+
+#### GET `/privatemessages/v1/announcements`
+- **OperationId**: `getAnnouncements`
+
+#### GET `/privatemessages/v1/messages?messageTab={tab}&pageSize={limit}&pageNumber={page}`
+- **OperationId**: `getPMMessages`
+
+#### POST `/privatemessages/v1/messages/{isRead}`
+- **OperationId**: `toggleReadStatus`
+- **Path**: `mark-read` or `mark-unread`
+- **Body**:
+  ```json
+  { "messageIds":["<id1>","<id2>"] }
+  ```
+
+#### POST `/privatemessages/v1/messages/{isArchived}`
+- **OperationId**: `toggleArchiveStatus`
+- **Path**: `archive` or `unarchive`
+- **Body**:
+  ```json
+  { "messageIds":["<id1>","<id2>"] }
+  ```
+
+#### GET `/privatemessages/v1/messages/unread/count`
+- **OperationId**: `getUnreadMessageCount`
+
+---
+
+#### POST `/privatemessages/v1/messages/send`
+- **OperationId**: `sendPrivateMessage`
+- **Body**:
+  ```json
+  { "recipientid":"<userId>", "body":"<text>", "subject":"<string>", "replyMessageId":"<id>", "includePreviousMessage":<boolean> }
+  ```
+
+#### GET `/privatemessages/v1/announcements`
+- **OperationId**: `getAnnouncements`
+
+#### GET `/privatemessages/v1/messages?messageTab={tab}&pageSize={limit}&pageNumber={page}`
+- **OperationId**: `getPMMessages`
+
+#### POST `/privatemessages/v1/messages/{isRead}`
+- **OperationId**: `toggleReadStatus`
+- **Path**: `mark-read` or `mark-unread`
+- **Body**:
+  ```json
+  { "messageIds":["<id1>","<id2>"] }
+  ```
+
+#### POST `/privatemessages/v1/messages/{isArchived}`
+- **OperationId**: `toggleArchiveStatus`
+- **Path**: `archive` or `unarchive`
+- **Body**:
+  ```json
+  { "messageIds":["<id1>","<id2>"] }
+  ```
+
+#### GET `/privatemessages/v1/messages/unread/count`
+- **OperationId**: `getUnreadMessageCount`
+
+---
+## Thumbnails
+
+#### GET `/thumbnails/v1/users/avatar?userIds={userIds}&size={size}&format={format}`
+- **OperationId**: `multiGetUserThumbnails`
+
+#### GET `/thumbnails/v1/users/avatar-headshot?userIds={userIds}&size={size}&format={format}`
+- **OperationId**: `multiGetUserHeadshots`
+
+#### GET `/thumbnails/v1/users/outfits?userOutfitIds={userOutfitIds}&size={size}&format={format}`
+- **OperationId**: `multiGetOutfitThumbnails`
+
+#### GET `/thumbnails/v1/groups/icons?groupIds={groupIds}&size={size}&format={format}`
+- **OperationId**: `multiGetGroupIcons`
+
+#### GET `/thumbnails/v1/assets?assetIds={assetIds}&size={size}&format={format}`
+- **OperationId**: `multiGetAssetThumbnails`
+
+#### GET `/thumbnails/v1/games/icons?universeIds={universeIds}&size={size}&format={format}`
+- **OperationId**: `multiGetUniverseIcons`
+
+---
+
+#### GET `/trades/v1/trades/{tradeType}?cursor={cursor}`
+- **OperationId**: `getMyTrades`
+
+#### GET `/trades/v1/trades/{tradeId}`
+- **OperationId**: `getTradeDetails`
+
+#### POST `/trades/v1/trades/{tradeId}/accept`
+- **OperationId**: `acceptTrade`
+
+#### POST `/trades/v1/trades/{tradeId}/decline`
+- **OperationId**: `declineTrade`
+
+#### GET `/trades/v1/trades/inbound/count`
+- **OperationId**: `getInboundTradeCount`
+
+#### POST `/trades/v1/trades/send`
+- **OperationId**: `createTrade`
+- **Body**:
+  ```json
+  { "offers":[{ "robux":<number>,"userAssetIds":["<id>"],"userId":"<id>" }], "requests":[...] }
+  ```
+
+#### POST `/trades/v1/trades/counter`
+- **OperationId**: `counterTrade`
+- **Body**: same structure as createTrade
+
+---
+## Users
+
+#### GET `/users/v1/users/authenticated`
+- **OperationId**: `getMyInfo`
+
+#### GET `/users/v1/users/{userId}`
+- **OperationId**: `getUserInfo`
+
+#### GET `/users/v1/users/{userId}/status`
+- **OperationId**: `getUserStatus`
+
+#### PATCH `/users/v1/users/{userId}/status`
+- **OperationId**: `updateStatus`
+- **Body**:
+  ```json
+  { "status":"<string>" }
+  ```
+
+#### GET `/users/v1/users/{userId}/username-history?limit={limit}`
+- **OperationId**: `getPreviousUsernames`
+
+#### GET `/users/results?keyword={keyword}&maxRows={limit}&startIndex={offset}`
+- **OperationId**: `searchUsers`
+
+#### GET `/premiumfeatures/v1/users/{userId}/validate-membership`
+- **OperationId**: `getMembershipType`
+
+#### POST `/users/v1/usernames/users`
+- **OperationId**: `getUserIdByUsername`
+- **Body**:
+  ```json
+  { "usernames":["<username1>",...]}  
+  ```
